@@ -1,4 +1,4 @@
-# mill
+# Mill
 
 WordPress Theme
 
