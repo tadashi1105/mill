@@ -1,0 +1,24 @@
+// /**
+//  * 0.0 - Widget RSS
+//  *
+//  * Widget rss.
+//  */
+
+.widget_rss {
+	@extend .widget_recent_comments;
+}
+
+// .widget_rss {
+// 	.widget-title a.rsswidget {
+// 		img {}
+// 	}
+//
+// 	ul {
+// 		li {
+// 			a.rsswidget {}
+// 			span.rss-date {}
+// 			div.rssSummary {}
+// 			cite {}
+// 		}
+// 	}
+// }

@@ -1,0 +1,19 @@
+// /**
+//  * 0.0 - Conent Section
+//  *
+//  * Content section.
+//  */
+
+.#{$site-prefix}l-content {
+	.#{$site-prefix}c-container {
+		@include media-breakpoint-down(sm) {
+			padding: 0;
+			> .#{$site-prefix}c-row {
+				margin: 0;
+				> div {
+					padding: 0;
+				}
+			}
+		}
+	}
+}

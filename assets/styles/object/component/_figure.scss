@@ -1,0 +1,18 @@
+//
+// Figures
+//
+
+.#{$site-prefix}c-figure {
+	// Ensures the caption's text aligns with the image.
+	display: inline-block;
+}
+
+.#{$site-prefix}c-figure__img {
+	@include rem(margin-bottom, ($site-spacer-y / 2));
+	line-height: 1;
+}
+
+.#{$site-prefix}c-figure__caption {
+	font-size: 90%;
+	color: $site-gray-light;
+}

@@ -1,0 +1,65 @@
+// /**
+//  * 0.0 - Widget Author Box
+//  *
+//  * Widget author box.
+//  */
+
+.#{$site-prefix}p-author-box {
+	$this: &;
+
+	position: relative;
+	color: $site-light-contrast-color;
+
+	&__bio-bg {
+		background-color: $site-brand-primary;
+		height: $site-author-box-bio-bg-size;
+	}
+
+	&__name,
+	&__title {
+		@include rem(font-size, $site-font-size-lg);
+	}
+
+	// &__title {}
+
+	&__link {}
+
+	&__avatar {
+		position: absolute;
+		top: ($site-author-box-bio-bg-size - 43px);
+		left: 16px;
+		border: 3px solid #fff;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+
+	&__description {
+		> p:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__posts {
+	}
+
+	&__posts-list {
+		@include rem(padding-left, 1.5rem);
+		margin-bottom: 0;
+	}
+
+
+	// Overwrite
+
+	.#{$site-prefix}c-nav {
+		position: absolute;
+		top: ($site-author-box-bio-bg-size + 8px);
+		right: 16px;
+	}
+
+	.#{$site-prefix}c-tabs__content {
+		@include rem(margin-top, 43px);
+	}
+}
+
+// .widget_author_box {}
+// .#{$site-prefix}p-author-box {}

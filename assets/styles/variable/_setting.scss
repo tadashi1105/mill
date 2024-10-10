@@ -1,0 +1,457 @@
+// Table of Contents
+//
+// Prefix
+// Colors
+// Options
+// Spacing
+// Body
+// Links
+// Grid breakpoints
+// Grid containers
+// Grid columns
+// Fonts
+// Components
+
+
+// Prefix
+$site-prefix:                    'site-' !default;
+
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$site-enable-flex:               false !default;
+$site-enable-rounded:            true !default;
+// $site-enable-rounded:            false !default;
+$site-enable-shadows:            false !default;
+$site-enable-gradients:          false !default;
+$site-enable-transitions:        false !default;
+$site-enable-hover-media-query:  false !default;
+$site-enable-grid-classes:       true !default;
+
+// $site-enable-rem:                false !default;
+$site-enable-rem:                true !default;
+// $site-enable-ie:                false !default;
+$site-enable-ie:                true !default;
+
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+
+$site-spacer:                  1rem !default;
+
+$site-spacer-x:                  $site-spacer !default;
+$site-spacer-y:                  $site-spacer !default;
+$site-spacers: (
+  0: (
+    x:   0,
+    y:   0
+  ),
+  1: (
+    x:   $site-spacer-x,
+    y:   $site-spacer-y
+  ),
+  2: (
+    x:   ($site-spacer-x * 1.5),
+    y:   ($site-spacer-y * 1.5)
+  ),
+  3: (
+    x:   ($site-spacer-x * 3),
+    y:   ($site-spacer-y * 3)
+  )
+) !default;
+
+$site-border-width:              1px !default;
+
+
+// Foundation
+// Body
+
+$site-bg-color:                  $site-gray-lightest !default;
+$site-text-color:                $site-gray-darkest !default;
+
+
+// Link
+
+$site-link-color:                $site-brand-primary !default;
+$site-link-hover-color:          darken($site-link-color, 16%) !default;
+// $site-link-active-color:         $site-brand-primary !default;
+$site-link-disabled-color:       $site-gray-dark !default;
+
+$site-link-decoration:           none !default;
+$site-link-hover-decoration:     underline !default;
+
+
+// Grid breakpoints
+//
+// Define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$site-grid-breakpoints: (
+	// Extra small screen / phone
+	xs: 0,
+	// Small screen / phone
+	sm: 544px,
+	// Medium screen / tablet
+	md: 768px,
+	// Large screen / desktop
+	lg: 992px,
+	// Extra large screen / wide desktop
+	xl: 1200px
+) !default;
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$site-container-max-widths: (
+	sm: 576px,
+	md: 720px,
+	lg: 940px,
+	xl: 1140px
+) !default;
+
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$site-grid-columns:               12 !default;
+// $site-grid-gutter-width:          1rem !default;
+$site-grid-gutter-width:          2rem !default;
+// $site-grid-gutter-width-md:          1.875rem !default; // 30px
+
+
+// Typography
+// Base Typography
+// Base Typography - Font Family
+
+$site-font-family-sans-serif:     "Roboto", ArialMT, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", sans-serif !default;
+$site-font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
+$site-font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
+
+$site-font-family-base:           $site-font-family-sans-serif !default;
+
+
+// Base Typography
+
+$site-font-size-root:             16px !default;
+$site-font-size-base:             1rem !default;
+
+$site-font-size-xs:               .75rem !default;
+$site-font-size-sm:               .875rem !default;
+$site-font-size-lg:               1.25rem !default;
+
+$site-line-height:                1.5 !default;
+
+$site-typo-margin-bottom:       $site-spacer !default;
+$site-typo-margin-bottom-secondary: ($site-spacer / 2) !default;
+
+
+// Headings
+
+$site-font-size-h1:               2rem !default;    // 32
+$site-font-size-h2:               1.75rem !default; // 28
+$site-font-size-h3:               1.5rem !default;  // 24
+$site-font-size-h4:               1.25rem !default; // 20
+$site-font-size-h5:               1rem !default;    // 16
+$site-font-size-h6:               .75rem !default;  // 12
+
+$site-display1-size:               6rem !default;
+$site-display2-size:               5.5rem !default;
+$site-display3-size:               4.5rem !default;
+$site-display4-size:               3.5rem !default;
+
+$site-display1-weight:             300 !default;
+$site-display2-weight:             300 !default;
+$site-display3-weight:             300 !default;
+$site-display4-weight:             300 !default;
+
+$site-headings-margin-bottom:     $site-spacer !default;
+$site-headings-font-family:       inherit !default;
+$site-headings-font-weight:       500 !default;
+$site-headings-line-height:       1.1 !default;
+$site-headings-color:             inherit !default;
+
+
+// Base
+
+$site-lead-font-size:             1.25rem !default;
+$site-lead-font-weight:           300 !default;
+
+$site-text-muted:                  $site-gray-light !default;
+$site-abbr-border-color:           $site-gray-light !default;
+$site-dt-font-weight:              bold !default;
+
+$site-blockquote-small-color:      $site-gray-light !default;
+$site-blockquote-font-size:        $site-font-size-sm !default;
+$site-blockquote-border-color:     $site-gray-lighter !default;
+
+$site-hr-border-color:             rgba(0,0,0,.1) !default;
+$site-hr-border-width:             $site-border-width !default;
+
+$site-dt-font-weight:              bold !default;
+
+$site-nested-kbd-font-weight:      bold !default;
+
+$site-list-inline-padding:         5px !default;
+
+
+// Object
+// Object/Component
+//
+// Define common padding and border radius sizes and more.
+
+$site-line-height-sm:         1.5 !default;
+$site-line-height-lg:         (4 / 3) !default;
+
+// $site-border-radius:          .25rem !default;
+$site-border-radius: 2px !default;
+// $site-border-radius-sm:       .2rem !default;
+$site-border-radius-sm:       4px !default;
+// $site-border-radius-lg:       .3rem !default;
+$site-border-radius-lg:       5px !default;
+
+$site-component-active-color: #fff !default;
+$site-component-active-bg:    $site-brand-primary !default;
+
+$site-caret-width:            .3em !default;
+$site-caret-width-lg:         $site-caret-width !default;
+$site-cursor-disabled:        not-allowed !default;
+
+
+// Z-index master list
+
+$site-zindex-modal-bg:          1040 !default;
+$site-zindex-modal:             1050 !default;
+
+
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+
+// $site-table-cell-padding:            .75rem !default;
+$site-table-cell-padding:            12px !default;
+// $site-table-sm-cell-padding:         .3rem !default;
+$site-table-sm-cell-padding:         4.8px !default;
+
+$site-table-bg:                      transparent !default;
+$site-table-bg-accent:               #f9f9f9 !default;
+$site-table-bg-hover:                #f5f5f5 !default;
+$site-table-bg-active:               $site-table-bg-hover !default;
+
+$site-table-border-width:            $site-border-width !default;
+$site-table-border-color:            $site-gray-lightest !default;
+
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background and border color.
+
+$site-btn-padding-x:                  1rem !default;
+$site-btn-padding-y:                  .375rem !default;
+$site-btn-font-weight:                normal !default;
+
+$site-btn-primary-color:              #fff !default;
+$site-btn-primary-bg:                 $site-brand-primary !default;
+$site-btn-primary-border:             $site-btn-primary-bg !default;
+
+$site-btn-secondary-color:            $site-gray-dark !default;
+$site-btn-secondary-bg:               #fff !default;
+$site-btn-secondary-border:           #ccc !default;
+
+$site-btn-info-color:                 #fff !default;
+$site-btn-info-bg:                    $site-brand-info !default;
+$site-btn-info-border:                $site-btn-info-bg !default;
+
+$site-btn-success-color:              #fff !default;
+$site-btn-success-bg:                 $site-brand-success !default;
+$site-btn-success-border:             $site-btn-success-bg !default;
+
+$site-btn-warning-color:              #fff !default;
+$site-btn-warning-bg:                 $site-brand-warning !default;
+$site-btn-warning-border:             $site-btn-warning-bg !default;
+
+$site-btn-danger-color:               #fff !default;
+$site-btn-danger-bg:                  $site-brand-danger !default;
+$site-btn-danger-border:              $site-btn-danger-bg !default;
+
+$site-btn-link-disabled-color:        $site-gray-light !default;
+
+$site-btn-padding-x-sm:               .75rem !default;
+$site-btn-padding-y-sm:               .25rem !default;
+
+$site-btn-padding-x-lg:               1.25rem !default;
+$site-btn-padding-y-lg:               .75rem !default;
+
+// Allows for customizing button radius independently from global border radius
+$site-btn-border-radius:              $site-border-radius !default;
+$site-btn-border-radius-lg:           $site-border-radius-lg !default;
+$site-btn-border-radius-sm:           $site-border-radius-sm !default;
+
+
+// Forms
+
+$site-input-padding-x:                .75rem !default;
+$site-input-padding-y:                .375rem !default;
+
+$site-input-bg:                       #fff !default;
+$site-input-bg-disabled:              $site-gray-lighter !default;
+
+$site-input-color:                    $site-gray !default;
+$site-input-border-color:             #ccc !default;
+$site-input-btn-border-width:         $site-border-width !default; // For form controls and buttons
+$site-input-box-shadow:               inset 0 1px 1px rgba(0,0,0,.075) !default;
+
+$site-input-border-radius:            $site-border-radius !default;
+$site-input-border-radius-lg:         $site-border-radius-lg !default;
+$site-input-border-radius-sm:         $site-border-radius-sm !default;
+
+$site-input-border-focus:             #66afe9 !default;
+$site-input-box-shadow-focus:         rgba(102,175,233,.6) !default;
+
+$site-input-color-placeholder:        #999 !default;
+
+$site-input-padding-x-sm:             .75rem !default;
+$site-input-padding-y-sm:             .275rem !default;
+
+$site-input-padding-x-lg:             1.25rem !default;
+$site-input-padding-y-lg:             .75rem !default;
+
+$site-input-height:                   (($site-font-size-base * $site-line-height) + ($site-input-padding-y * 2)) !default;
+$site-input-height-lg:                (($site-font-size-lg * $site-line-height-lg) + ($site-input-padding-y-lg * 2)) !default;
+$site-input-height-sm:                (($site-font-size-sm * $site-line-height-sm) + ($site-input-padding-y-sm * 2)) !default;
+
+$site-form-group-margin-bottom:       $site-spacer-y !default;
+
+$site-input-group-addon-bg:           $site-gray-lighter !default;
+$site-input-group-addon-border-color: $site-input-border-color !default;
+
+$site-cursor-disabled:                not-allowed !default;
+
+// Form validation icons
+$site-form-icon-success: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MTIgNzkyIj48cGF0aCBmaWxsPSIjNWNiODVjIiBkPSJNMjMzLjggNjEwYy0xMy4zIDAtMjYtNi0zNC0xNi44TDkwLjUgNDQ4LjhDNzYuMyA0MzAgODAgNDAzLjMgOTguOCAzODljMTguOC0xNC4yIDQ1LjUtMTAuNCA1OS44IDguNGw3MiA5NUw0NTEuMyAyNDJjMTIuNS0yMCAzOC44LTI2LjIgNTguOC0xMy43IDIwIDEyLjQgMjYgMzguNyAxMy43IDU4LjhMMjcwIDU5MGMtNy40IDEyLTIwLjIgMTkuNC0zNC4zIDIwaC0yeiIvPjwvc3ZnPg==" !default;
+$site-form-icon-warning: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MTIgNzkyIj48cGF0aCBmaWxsPSIjZjBhZDRlIiBkPSJNNjAzIDY0MC4ybC0yNzguNS01MDljLTMuOC02LjYtMTAuOC0xMC42LTE4LjUtMTAuNnMtMTQuNyA0LTE4LjUgMTAuNkw5IDY0MC4yYy0zLjcgNi41LTMuNiAxNC40LjIgMjAuOCAzLjggNi41IDEwLjggMTAuNCAxOC4zIDEwLjRoNTU3YzcuNiAwIDE0LjYtNCAxOC40LTEwLjQgMy41LTYuNCAzLjYtMTQuNCAwLTIwLjh6bS0yNjYuNC0zMGgtNjEuMlY1NDloNjEuMnY2MS4yem0wLTEwN2gtNjEuMlYzMDRoNjEuMnYxOTl6Ii8+PC9zdmc+" !default;
+$site-form-icon-danger: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MTIgNzkyIj48cGF0aCBmaWxsPSIjZDk1MzRmIiBkPSJNNDQ3IDU0NC40Yy0xNC40IDE0LjQtMzcuNiAxNC40LTUyIDBsLTg5LTkyLjctODkgOTIuN2MtMTQuNSAxNC40LTM3LjcgMTQuNC01MiAwLTE0LjQtMTQuNC0xNC40LTM3LjYgMC01Mmw5Mi40LTk2LjMtOTIuNC05Ni4zYy0xNC40LTE0LjQtMTQuNC0zNy42IDAtNTJzMzcuNi0xNC4zIDUyIDBsODkgOTIuOCA4OS4yLTkyLjdjMTQuNC0xNC40IDM3LjYtMTQuNCA1MiAwIDE0LjMgMTQuNCAxNC4zIDM3LjYgMCA1MkwzNTQuNiAzOTZsOTIuNCA5Ni40YzE0LjQgMTQuNCAxNC40IDM3LjYgMCA1MnoiLz48L3N2Zz4=" !default;
+
+
+// Form states and alerts
+//
+// Define colors for form feedback states and, by default, alerts.
+
+$site-state-success-text:             #3c763d !default;
+$site-state-success-bg:               #dff0d8 !default;
+$site-state-success-border:           darken($site-state-success-bg, 5%) !default;
+
+$site-state-info-text:                #31708f !default;
+$site-state-info-bg:                  #d9edf7 !default;
+$site-state-info-border:              darken($site-state-info-bg, 7%) !default;
+
+$site-state-warning-text:             #8a6d3b !default;
+$site-state-warning-bg:               #fcf8e3 !default;
+$site-state-warning-border:           darken($site-state-warning-bg, 5%) !default;
+
+$site-state-danger-text:              #a94442 !default;
+$site-state-danger-bg:                #f2dede !default;
+$site-state-danger-border:            darken($site-state-danger-bg, 5%) !default;
+
+
+// Close
+
+$site-close-font-weight:           bold !default;
+$site-close-color:                 #000 !default;
+$site-close-text-shadow:           0 1px 0 #fff !default;
+
+
+// Code
+
+$site-code-color:                  #bd4147 !default;
+$site-code-bg:                     #f7f7f9 !default;
+
+$site-kbd-color:                   #fff !default;
+$site-kbd-bg:                      #333 !default;
+
+$site-pre-bg:                      #f7f7f9 !default;
+$site-pre-color:                   $site-gray-dark !default;
+$site-pre-border-color:            #ccc !default;
+$site-pre-scrollable-max-height:   340px !default;
+
+$site-pre-border-radius:           $site-border-radius;
+$site-pre-spacer:                  $site-spacer;
+$site-pre-spacer-x:                $site-spacer-x;
+$site-pre-spacer-y:                $site-spacer-y;
+
+
+// List group
+
+$site-list-group-bg:                 #fff !default;
+$site-list-group-border-color:       #ddd !default;
+$site-list-group-border-width:       $site-border-width !default;
+$site-list-group-border-radius:      $site-border-radius !default;
+
+$site-list-group-hover-bg:           #f5f5f5 !default;
+$site-list-group-active-color:       $site-component-active-color !default;
+$site-list-group-active-bg:          $site-component-active-bg !default;
+$site-list-group-active-border:      $site-list-group-active-bg !default;
+$site-list-group-active-text-color:  lighten($site-list-group-active-bg, 40%) !default;
+
+$site-list-group-disabled-color:      $site-gray-light !default;
+$site-list-group-disabled-bg:         $site-gray-lighter !default;
+$site-list-group-disabled-text-color: $site-list-group-disabled-color !default;
+
+$site-list-group-link-color:         #555 !default;
+$site-list-group-link-hover-color:   $site-list-group-link-color !default;
+$site-list-group-link-heading-color: #333 !default;
+
+
+// Modals
+
+// Padding applied to the modal body
+$site-modal-inner-padding:         15px !default;
+
+$site-modal-title-padding:         15px !default;
+$site-modal-title-line-height:     $site-line-height !default;
+
+$site-modal-content-bg:                             #fff !default;
+$site-modal-content-border-color:                   rgba(0,0,0,.2) !default;
+
+$site-modal-backdrop-bg:           #000 !default;
+$site-modal-backdrop-opacity:      .5 !default;
+$site-modal-header-border-color:   #e5e5e5 !default;
+$site-modal-footer-border-color:   $site-modal-header-border-color !default;
+
+$site-modal-lg:                    900px !default;
+$site-modal-md:                    600px !default;
+$site-modal-sm:                    300px !default;
+
+
+// Drawer
+
+// $site-zindex-drawer-bg:         1040 !default;
+// $site-zindex-drawer:            1050 !default;
+//
+// $site-drawer-inner-padding: $site-spacer;
+// $site-drawer-title-padding: $site-spacer;
+// $site-drawer-title-line-height: $site-line-height;
+// $site-drawer-content-bg: #fff;
+// $site-drawer-content-border-color: rgba(0,0,0,.2);
+// $site-drawer-backdrop-bg: #000;
+// $site-drawer-backdrop-opacity: .5;
+// $site-drawer-header-border-color: #e5e5e5;
+// $site-drawer-footer-border-color: $site-drawer-header-border-color;
+$site-drawer-full: 100%;
+// $site-drawer-lg:                    900px !default;
+// $site-drawer-md:                    600px !default;
+// $site-drawer-sm:                    300px !default;
+$site-drawer-padding-vertical: $site-spacer-y;
+
+
+// Shadow
+
+$site-shadow-key-umbra-opacity: 0.2 !default;
+$site-shadow-key-penumbra-opacity: 0.14 !default;
+$site-shadow-ambient-shadow-opacity: 0.12 !default;

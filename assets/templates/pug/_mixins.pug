@@ -1,0 +1,872 @@
+mixin content
+  a(name='top')
+  .mill-container-fluid(
+    class=[
+      'mill-container--max-width-desktop',
+      'container-fluid',
+    ],
+  )
+    .mill-row.row
+      if block
+        block
+      else
+        p No content provided
+
+
+mixin entry-meta
+  .mill-entry-meta(
+    class=[
+      'entry-meta',
+    ]
+  )
+    span.sticky-post(class=[])
+      span(class="fa fa-sticky-note fa-lg" aria-hidden="true")
+      |  Featured
+    span.entry-format
+      span.sr-only.screen-reader-text Format
+      span(class='fa fa-thumb-tack fa-lg' aria-hidden='true')
+      span(class='fa fa-file-text-o fa-lg' aria-hidden='true')
+      span(class='fa fa-file-image-o fa-lg' aria-hidden='true')
+      span(class='fa fa-file-video-o fa-lg' aria-hidden='true')
+      span(class='fa fa-quote-left fa-lg' aria-hidden='true')
+      span(class='fa fa-link fa-lg' aria-hidden='true')
+      span(class='fa fa-files-o fa-lg' aria-hidden='true')
+      span(class='fa fa-ellipsis-h fa-lg' aria-hidden='true')
+      span(class='fa fa-file-audio-o fa-lg' aria-hidden='true')
+      span(class='fa fa-comments-o fa-lg' aria-hidden='true')
+      a(href='#')  Format
+    span.posted-on
+      span.sr-only.screen-reader-text Posted on
+      span(class='fa fa-clock-o fa-lg' aria-hidden='true')
+      a(href='#' rel='bookmark')
+        time.entry-date.published.updated(datetime='')  2014/11/11
+        time.updated(datetime='')  2015/12/12
+    span.byline
+      span.author.vcard
+        span.sr-only.screen-reader-text Author
+        span(class='fa fa-user fa-lg' aria-hidden='true')
+        a.url.fn.n(href='#')  Tadashi
+    span.cat-links
+      span.sr-only.screen-reader-text Category
+      span(class='fa fa-archive fa-lg' aria-hidden='true')
+      a(href='#')  cat-1
+      a(href='#')  cat-2
+      a(href='#')  cat-3
+    span.tags-links
+      span.sr-only.screen-reader-text Tags
+      span(class='fa fa-tag fa-lg' aria-hidden='true')
+      a(href='#')  tag-1
+      a(href='#')  tag-2
+      a(href='#')  tag-3
+    span.full-size-link
+      span.sr-only.screen-reader-text Full size
+      span(class='fa fa-picture-o fa-lg' aria-hidden='true')
+      a(href='#')  300 x 300
+    span.comments-link
+      span(class='fa fa-comment-o fa-lg' aria-hidden='true')
+      a(href='#')  Leave a comment
+    span.edit-link
+      span(class='fa fa-edit fa-lg' aria-hidden='true')
+      a(href='#')  Edit
+
+
+mixin pagination
+  nav.mill-pagination(
+    class=[
+      'navigation',
+    ],
+    role='navigation'
+  )
+    h2.sr-only.screen-reader-text Posts navigation
+    ul.mill-pagination__row(
+      class=[
+        'pagination',
+      ]
+    )
+      each item in ['&laquo;', 1, 2, '...', 10, 100, '&raquo;']
+        li.mill-pagination__item
+          a.mill-pagination__link(href='#')= item
+
+
+mixin page-links
+  nav.mill-page-links(
+    class=[
+      'page-links',
+    ],
+    role="navigation"
+  )
+    span.mill-page-links__title(
+      class=[
+        'page-links-title',
+      ]
+    ) Pages
+    span.mill-page-links__item()
+      span.sr-only.screen-reader-text Page
+      span.mill-page-links__number 1
+    a.mill-page-links__link(href='#')
+      span.mill-page-links__item()
+        span.sr-only.screen-reader-text Page
+        span.mill-page-links__number 2
+    a.mill-page-links__link(href='#')
+      span.mill-page-links__item()
+        span.sr-only.screen-reader-text Page
+        span.mill-page-links__number 3
+
+
+mixin post-navigation
+  nav.mill-post-navigation(
+    class=[
+      'navigation',
+      'post-navigation',
+    ],
+    role="navigation"
+  )
+    h2.sr-only.screen-reader-text Post navigation
+    .mill-post-navigation__links(
+      class=[
+        'nav-links',
+      ]
+    )
+      .mill-row.row
+        .mill-col.col-sm-6
+          .mill-post-navigation__previous-item(
+            class=[
+              'mill-shadow--2dp',
+              'panel',
+              'panel-default',
+              'nav-previous',
+            ],
+            style="background-image: url('http://www.getmdl.io/templates/blog/images/coffee.jpg');",
+          )
+            a.mill-post-navigation__previous-link(href='#' rel='prev')
+              .mill-post-navigation__header.panel-heading
+                span.mill-post-navigation__title.meta-nav(aria-hidden='true') Previous
+              .mill-post-navigation__section.panel-body
+                span.sr-only.screen-reader-text Previous post:
+                span.mill-post-navigation__subtitle.post-title Standard Format without a Featured&nbsp;Image
+        .mill-col.col-sm-6
+          .mill-post-navigation__next-item(
+            class=[
+              'mill-shadow--2dp',
+              'panel',
+              'panel-default',
+              'nav-next',
+            ],
+            style="background-image: url('http://www.getmdl.io/templates/blog/images/coffee.jpg');",
+          )
+            a.mill-post-navigation__next-link(href='#' rel='next')
+              .mill-post-navigation__header.panel-heading
+                span.mill-post-navigation__title.meta-nav(aria-hidden='true') Next
+              .mill-post-navigation__section.panel-body
+                span.sr-only.screen-reader-text Next post:
+                span.mill-post-navigation__subtitle.post-title Standard Format with a Featured&nbsp;Image
+
+
+mixin card
+  .mill-card(
+    class=[
+      'mill-shadow--2dp',
+      'panel',
+      'panel-default',
+    ]
+  )
+    .mill-card__header(
+      class=[
+        'panel-heading',
+      ]
+    )
+      h1.mill-card__title(
+        class=[
+          'panel-title',
+        ]
+      )= postTitle
+    .mill-card__section(
+      class=[
+        'panel-body',
+      ]
+    )
+      p.mill-card__subtitle= postSummary
+      if block
+        block
+      else
+        p No content provided
+
+
+mixin entry
+  article.mill-entry(
+    class=[
+      'mill-card',
+      'mill-shadow--2dp',
+      'panel',
+      'panel-default',
+    ]
+  )
+    .mill-entry__header(
+      class=[
+        'mill-card__header',
+        'panel-heading',
+        'entry-header',
+      ]
+    )
+      h1.mill-entry__title(
+        class=[
+          'mill-card__title',
+        ]
+      )= postTitle
+    .mill-entry__media(
+      class=[
+        'mill-card__section',
+        'panel-body',
+      ]
+    )
+      figure.mill-entry__figure(
+        class=[
+          'thumbnail',
+        ]
+      )
+        img.mill-entry__image(
+          class=[
+            'img-responsive',
+            'post-thumbnail',
+          ],
+          src=thumbnail,
+        )
+        figcaption.mill-entry__figcaption(
+          class=[
+            'text-center',
+            'caption',
+            'wp-caption-text',
+          ]
+        ) photo credit: 
+          a(href='#') Huasonic 
+          | via 
+          a(href='#') photopin
+          a(href='#') cc
+    .mill-entry__content(
+      class=[
+        'mill-card__section',
+        'panel-body',
+        'entry-content',
+      ]
+    )
+      p= post
+      +page-links
+    .mill-entry__meta(
+      class=[
+        'mill-card__section',
+        'panel-body',
+        'entry-footer',
+      ]
+    )
+      +entry-meta
+    .mill-entry__actions(
+      class=[
+        'mill-card__section',
+        'panel-body',
+      ]
+    )
+      a.mill-btn(
+        href='#',
+        class=[
+          'btn',
+          'btn-default',
+        ],
+      ) Twitter
+      a.mill-btn(
+        href='#',
+        class=[
+          'btn',
+          'btn-default',
+        ],
+      ) Facebook
+      a.mill-btn(
+        href='#',
+        class=[
+          'btn',
+          'btn-default',
+        ],
+      ) Google+
+      a.mill-btn(
+        href='#',
+        class=[
+          'btn',
+          'btn-default',
+        ],
+      ) Hatena
+
+
+mixin card--sub
+  .mill-card(
+    class=[
+      'mill-shadow--2dp',
+      'panel',
+      'panel-default',
+    ]
+  )
+    .mill-card__header(
+      class=[
+        'panel-heading',
+      ]
+    )
+      h3.mill-card__title(
+        class=[
+          'panel-title',
+        ]
+      )= subTitle
+    .mill-card__section(
+      class=[
+        'panel-body',
+      ]
+    )
+      p.mill-card__subtitle= subSummary
+      if block
+        block
+      else
+        p No content provided
+
+
+mixin entry-card
+  article.mill-entry-card(
+    class=[
+      'mill-card',
+      'mill-shadow--2dp',
+      'panel',
+      'panel-default',
+    ]
+  )
+    .mill-grid
+      .mill-cell
+        .mill-entry-card__media.mill-card__section
+          .mill-shape--circle.mill-color--primary
+            a(
+              href='#',
+              class=[
+                'post-thumbnail',
+              ],
+            )
+              img.mill-entry-card__image(
+                src=thumbnail,
+                class=[
+                  '',
+                ],
+              )
+      .mill-cell
+        .mill-entry-card__header(
+          class=[
+            'mill-card__section',
+            'entry-header',
+          ]
+        )
+          h2.mill-entry-card__title(
+            class=[
+              'mill-card__title',
+              'entry-title',
+            ]
+          )
+            a(href='#' rel='bookmark')= postTitle
+        .mill-entry-card__content(
+          class=[
+            'mill-card__section',
+            'visible-sm-block',
+            'visible-md-block',
+            'visible-lg-block',
+            'entry-content',
+          ]
+        )
+          p= postSummary
+        .mill-entry-card__meta(
+          class=[
+            'mill-card__section',
+            'entry-footer',
+          ]
+        )
+          +entry-meta
+        .mill-entry-card__actions(
+          class=[
+            'mill-card__section',
+            'visible-sm-block',
+            'visible-md-block',
+            'visible-lg-block',
+          ],
+        )
+          a(
+            href='#',
+            class=[
+              'btn',
+              'btn-default',
+              'more-link',
+            ]
+            rel='bookmark'
+          ) Read more
+          span.sr-only.screen-reader-text= postTitle
+
+
+mixin entry-card--small
+  .mill-entry-card.mill-entry-card--small(
+    class=[
+      'mill-card',
+      'mill-shadow--2dp',
+      'panel',
+      'panel-default',
+    ]
+  )
+    .mill-grid
+      .mill-cell
+        .mill-entry-card__media.mill-card__section
+          .mill-shape--circle.mill-color--primary
+            a(
+              href='#',
+              class=[
+                'post-thumbnail',
+              ],
+            )
+              img(
+                src=thumbnail,
+                class=[
+                ],
+              )
+      .mill-cell
+        .mill-entry-card__header(
+          class=[
+            'mill-card__header',
+            'entry-header',
+          ]
+        )
+          p.mill-entry-card__title(
+            class=[
+              'mill-card__title',
+              'entry-title',
+            ]
+          )
+            a(href='#' rel='bookmark')= postTitle
+
+
+mixin widget
+  aside.mill-widget(
+    class=[
+      'mill-card',
+      'mill-shadow--2dp',
+      'panel',
+      'panel-default',
+      'widget',
+    ]
+  )
+    .mill-widget__header(
+      class=[
+        'mill-card__header',
+        'panel-heading',
+      ]
+    )
+      h3.mill-widget__title(
+        class=[
+          'mill-card__title',
+          'panel-title',
+          'widget-title',
+        ]
+      )= subTitle
+    .mill-widget__section(
+      class=[
+        'mill-card__section',
+        'panel-body',
+      ]
+    )
+      p= subSummary
+      +tab
+    .mill-widget__actions(
+      class=[
+        'mill-card__section',
+        'panel-body',
+      ]
+    )
+      a.mill-btn(href='#') Read more
+
+
+mixin tab
+  .mill-tabs
+    ul.mill-tabs__tab-bar(
+      class=[
+        'mill-nav',
+        'mill-nav--tabs',
+        'mill-nav--justified',
+        'nav',
+        'nav-tabs',
+        'nav-justified',
+      ]
+      role='tablist',
+    )
+      li.mill-tabs__tab(
+        class=[
+          'mill-nav__item',
+          'active',
+        ],
+        role='presentation',
+      )
+        a(
+          href='#starks-panel',
+          class=[
+            'mill-nav__link',
+          ],
+          role='tab',
+          aria-controls='starks-panel',
+          data-toggle='tab',
+        ) Starks
+      li.mill-tabs__tab(
+        class=[
+          'mill-nav__item',
+        ],
+        role='presentation',
+      )
+        a(
+          href='#lannisters-panel',
+          class=[
+            'mill-nav__link',
+          ],
+          role='tab',
+          aria-controls='lannisters-panel',
+          data-toggle='tab',
+        ) Lannisters
+      li.mill-tabs__tab(
+        class=[
+          'mill-nav__item',
+        ],
+        role='presentation',
+      )
+        a(
+          href='#targaryens-panel',
+          class=[
+            'mill-nav__link',
+          ],
+          role='tab',
+          aria-controls='targaryens-panel',
+          data-toggle='tab',
+        ) Targaryens
+
+    .mill-tabs__content(
+      class=[
+        'tab-content',
+      ]
+    )
+      .mill-tabs__panel(
+        id='starks-panel',
+        class=[
+          'tab-pane',
+          'fade',
+          'in',
+          'active',
+        ],
+        role='tabpanel',
+      )
+        ul
+          li Eddardg
+          li Catelyng
+          li Robbg
+          li Sansag
+          li Brandong
+          li Aryag
+          li Rickong
+      .mill-tabs__panel(
+        id='lannisters-panel',
+        class=[
+          'tab-pane',
+          'fade',
+        ],
+        role='tabpanel',
+      )
+        ul
+          li Tywing
+          li Cerseig
+          li Jamieg
+          li Tyriong
+      .mill-tabs__panel(
+        id='targaryens-panel',
+        class=[
+          'tab-pane',
+          'fade',
+        ],
+        role='tabpanel',
+      )
+        +entry-card--small
+        +entry-card--small
+        +entry-card--small
+
+
+mixin social-link
+  .mill-social-link
+    a.mill-social-link__btn(
+      href='#',
+      class=[
+        'btn',
+        'btn-default',
+      ],
+      title='#',
+      rel='nofollow',
+      data-toggle='tooltip',
+      data-placement='top',
+    )
+      span.mill-social-link__icon(
+        class=[
+          'fa',
+          'fa-rss',
+        ]
+      )
+      .mill-social-link__name
+        small.mill-social-link__text RSS
+    a.mill-social-link__btn(
+      href='#',
+      class=[
+        'btn',
+        'btn-default',
+      ],
+      title='#',
+      rel='nofollow',
+      data-toggle='tooltip',
+      data-placement='top',
+    )
+      span.mill-social-link__icon(
+        class=[
+          'fa',
+          'fa-rss',
+        ]
+      )
+      .mill-social-link__name
+        small.mill-social-link__text Feedly
+    a.mill-social-link__btn(
+      href='#',
+      class=[
+        'btn',
+        'btn-default',
+      ],
+      title='#',
+      rel='nofollow',
+      data-toggle='tooltip',
+      data-placement='top',
+    )
+      span.mill-social-link__icon(
+        class=[
+          'fa',
+          'fa-twitter',
+        ]
+      )
+      .mill-social-link__name
+        small.mill-social-link__text Twitter
+    a.mill-social-link__btn(
+      href='#',
+      class=[
+        'btn',
+        'btn-default',
+      ],
+      title='#',
+      rel='nofollow',
+      data-toggle='tooltip',
+      data-placement='top',
+    )
+      span.mill-social-link__icon(
+        class=[
+          'fa',
+          'fa-envelope',
+        ]
+      )
+      .mill-social-link__name
+        small.mill-social-link__text Mail
+    a.mill-social-link__btn(
+      href='#',
+      class=[
+        'btn',
+        'btn-default',
+      ],
+      title='#',
+      rel='nofollow',
+      data-toggle='tooltip',
+      data-placement='top',
+    )
+      span.mill-social-link__icon(
+        class=[
+          'fa',
+          'fa-facebook',
+        ]
+      )
+      .mill-social-link__name
+        small.mill-social-link__text Facebook
+
+
+mixin label
+  span.mill-label(
+    class=[
+      'mill-btn',
+      'btn',
+      'btn-default',
+      'btn-xs',
+    ],
+  )
+    | label
+    span.mill-badge(
+      class=[
+        'badge',
+      ],
+    )
+
+
+mixin author-box
+  .mill-author-box
+    .mill-tabs
+      ul.mill-tabs__tab-bar(
+        class=[
+          'mill-nav',
+          'mill-nav--tabs',
+          'mill-nav--justified',
+          'nav',
+          'nav-tabs',
+          'nav-justified',
+        ],
+        role='tablist',
+      )
+        li.mill-tabs__tab(
+          class=[
+            'mill-nav__item',
+            'active',
+          ],
+          role='presentation',
+        )
+          a(
+            href='#bio',
+            class='mill-nav__link',
+            role='tab',
+            aria-controls='bio',
+            data-toggle='tab',
+          ) Bio
+        li.mill-tabs__tab(
+          class=[
+            'mill-nav__item',
+          ],
+          role='presentation',
+        )
+          a(
+            href='#posts',
+            class='mill-nav__link',
+            role='tab',
+            aria-controls='posts',
+            data-toggle='tab',
+          ) Posts
+
+      .mill-tabs__content(
+        class=[
+          'tab-content',
+        ],
+      )
+        .mill-tabs__panel(
+          id='bio',
+          class=[
+            'mill-card',
+            'tab-pane',
+            'fade',
+            'in',
+            'active',
+          ]
+          role='tabpanel',
+        )
+          .mill-grid
+            .mill-row.row
+              .mill-cell
+                .mill-author-box__avatar.mill-card__section
+                  a(href='#')
+                    img.mill-author-box__avatar-image(
+                      src='http://www.getmdl.io/templates/blog/images/coffee.jpg',
+                      width='80',
+                      height='80',
+                    )
+              .mill-cell
+                .mill-author-box__description.mill-card__section
+                  a(href='#')
+                    p.mill-author-box__name Name Name
+                  +social-link
+                  p I am name.
+        .mill-tabs__panel(
+          id='posts',
+          class=[
+            'mill-card',
+            'tab-pane',
+            'fade',
+          ]
+          role='tabpanel',
+        )
+          .mill-grid
+            .mill-row.row
+              .mill-cell
+                .mill-author-box__avatar.mill-card__section
+                  a(href='#')
+                    img.mill-author-box__avatar-image(
+                      src='http://www.getmdl.io/templates/blog/images/coffee.jpg',
+                      width='80',
+                      height='80',
+                    )
+              .mill-cell
+                .mill-author-box__posts.mill-card__section
+                  a(href='#')
+                    .mill-author-box__name
+                  +social-link
+                  ul
+                    li Post
+                    li Post
+                    li Post
+
+
+mixin comments
+  .mill-comments(
+    id='comments',
+    class=[
+      'panel',
+      'panel-default',
+      'comments-area',
+    ],
+  )
+    .mill-comments__header(
+      class=[
+        'panel-heading',
+      ],
+    )
+      h3.mill-comments__title(
+        class=[
+          'comments-title',
+        ],
+      )
+    .mill-comments__section(
+      class=[
+        'panel-body',
+      ],
+    )
+      ol.mill-comments__list(
+        class=[
+          'comment-list',
+        ],
+      )
+        li comennt
+      nav.mill-comments__nav(
+        id='comment-nav-below',
+        class=[
+          'comment-navigation',
+        ],
+        role='navigation',
+      )
+
+
+mixin comment-form
+  .mill-comment-form
+    .mill-comment-form__author
+    .mill-comment-form__email
+    .mill-comment-form__url
+    .mill-comment-form__comment
+    .mill-comment-form__notes
+    .mill-comment-form__submit
+
+
+mixin card-t
+  .mill-card.test
+    .mill-grid
+      .mill-cell
+        .mill-card__header header
+        .mill-card__section section1
+        .mill-card__section section2
+      .mill-cell
+        .mill-card__media media media media media media media media media media media media
+        .mill-card__section section1
+        .mill-card__section section2

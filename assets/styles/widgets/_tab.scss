@@ -1,0 +1,31 @@
+// /**
+//  * 0.0 - Tab
+//  *
+//  * Tab.
+//  */
+
+.mill_widget_tab {
+	.#{$site-prefix}c-nav--tabs {
+		border-bottom: 3px solid $site-light-contrast-color;
+	}
+
+	.#{$site-prefix}c-nav__link {
+		margin-bottom: -3px;
+		color: $site-light-contrast-color;
+		@include hover-focus {
+			color: $site-light-contrast-hover-color;
+		}
+	}
+
+	.#{$site-prefix}c-nav__link.active {
+		@include plain-hover-focus {
+			color: $site-light-contrast-active-color;
+		}
+	}
+
+	.#{$site-prefix}c-btn {
+		@include rem(margin-right, .25rem);
+		@include rem(margin-bottom, .25rem);
+		@include rem(font-size, $site-font-size-xs);
+	}
+}

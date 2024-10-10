@@ -1,0 +1,11 @@
+// Cards
+
+$site-card-spacer-x:            1rem !default;
+$site-card-spacer-y:            map-get(map-get($site-spacers, 3), y) !default;
+
+$site-card-border-width:        $site-border-width !default;
+$site-card-border-radius:       $site-border-radius !default;
+$site-card-border-color:        $site-gray-light !default;
+$site-card-border-radius-inner: $site-card-border-radius !default;
+$site-card-cap-bg:              $site-gray-darkest !default;
+$site-card-bg:                  $site-white !default;

@@ -1,0 +1,98 @@
+//
+// Base styles
+//
+
+.#{$site-prefix}c-card {
+	$this: &;
+
+	position: relative;
+	display: block;
+	background-color: $site-card-bg;
+	@include rem(margin-bottom, $site-card-spacer-y);
+	// @include border-radius($site-card-border-radius);
+
+	&__block {
+		@include rem(padding, $site-card-spacer-x);
+	}
+
+	&__title {
+		@include rem(margin-bottom, $site-card-spacer-x);
+	}
+
+	// &__subtitle {
+	// 	margin-top: -($site-card-spacer-y / 2);
+	// 	margin-bottom: 0;
+	// }
+
+	&__text:last-child {
+		margin-bottom: 0;
+	}
+
+
+	// Optional textual caps
+
+	&__header {
+		@include rem(padding, $site-card-spacer-x);
+		// background-color: $site-card-cap-bg;
+		// border-bottom: $site-card-border-width solid $site-card-border-color;
+
+		// &:first-child {
+		// 	@include border-radius($site-card-border-radius-inner $site-card-border-radius-inner 0 0);
+		// }
+	}
+
+	// &__footer {
+	// 	@include rem(padding, $site-card-spacer-y $site-card-spacer-x);
+	// 	background-color: $site-card-cap-bg;
+	// 	border-top: $site-card-border-width solid $site-card-border-color;
+  //
+	// 	&:last-child {
+	// 		@include border-radius(0 0 $site-card-border-radius-inner $site-card-border-radius-inner);
+	// 	}
+	// }
+
+
+	// Card image
+
+	// &__img {
+	// 	margin: -1.325rem;
+	// 	@include border-radius(2px);
+	// }
+
+	// &__img--overlay {
+	// 	position: absolute;
+	// 	top: 0;
+	// 	right: 0;
+	// 	bottom: 0;
+	// 	left: 0;
+	// 	padding: 1.25rem;
+	// }
+
+
+	// Card image caps
+	// &__img--top {
+	// 	@include border-radius($site-card-border-radius-inner $site-card-border-radius-inner 0 0);
+	// }
+	// &__img--bottom {
+	// 	@include border-radius(0 0 $site-card-border-radius-inner $site-card-border-radius-inner);
+	// }
+
+
+	// Background variations
+
+	// &--primary {
+	// 	@include card-variant($site-brand-primary, $site-brand-primary);
+	// }
+	// &--success {
+	// 	@include card-variant($site-brand-success, $site-brand-success);
+	// }
+	// &--info {
+	// 	@include card-variant($brand-info, $site-brand-info);
+	// }
+	// &--warning {
+	// 	@include card-variant($site-brand-warning, $site-brand-warning);
+	// }
+	// &--danger {
+	// 	@include card-variant($site-brand-danger, $site-brand-danger);
+	// }
+}

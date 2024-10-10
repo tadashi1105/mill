@@ -1,0 +1,134 @@
+// /**
+//  * 0.0 - Drawer
+//  *
+//  * Drawer.
+//  */
+
+// .#{$site-prefix}c-drawer-open      - body class for killing the scroll
+// .#{$site-prefix}c-drawer           - container to scroll within
+// .#{$site-prefix}c-drawer__dialog   - positioning shell for the drawer
+// .#{$site-prefix}c-drawer__content  - drawer w/ bg and corners and shit
+
+
+// Kill the scroll on the body
+.#{$site-prefix}c-drawer-open {
+	@extend %modal-open;
+}
+
+// Container that the drawer scrolls within
+.#{$site-prefix}c-drawer {
+	$this: &;
+	@extend %modal;
+
+	// When fading in the drawer, animate it to slide down
+	&.fade &__dialog {
+		@extend %modal_fade---_modal__dialog;
+	}
+
+	&.fade &__dialog--left {
+		@extend %modal_fade---_modal__dialog--left;
+	}
+
+	&.fade &__dialog--right {
+		@extend %modal_fade---_modal__dialog--right;
+	}
+
+	&.in &__dialog {
+		@extend %modal_in---_modal__dialog;
+	}
+}
+
+.#{$site-prefix}c-drawer-open .#{$site-prefix}c-drawer {
+	@extend %modal-open---_modal;
+}
+
+// Shell div to position the drawer with bottom padding
+.#{$site-prefix}c-drawer {
+	&__dialog {
+		position: absolute;
+		top: 0;
+		@include rem(width, 21.428rem);
+		min-height: 100%;
+		height: 100%;
+	}
+
+
+	// Drawer
+	&__content {
+		@extend %modal__content;
+		min-height: 100%;
+	}
+
+
+	// Drawer background
+	&-backdrop {
+		@extend %modal-backdrop;
+	}
+
+
+	// Drawer header
+	// Top section of the drawer w/ title and dismiss
+	&__header {
+		@extend %modal__header;
+	}
+
+
+	// Title text within header
+	&__title {
+		@extend %modal__title;
+	}
+
+
+	// Drawer body
+	// Where all drawer content resides (sibling of .drawer__header and .drawer__footer)
+	&__body {
+		@extend %modal__body;
+	}
+
+
+	// Footer (for actions)
+	&__footer {
+		@extend %modal__footer;
+	}
+
+
+	// Measure scrollbar width for padding body during drawer show/hide
+	&-scrollbar-measure {
+		@extend %modal-scrollbar-measure;
+	}
+
+	// Scale up the drawer
+	// Drawer sizes
+	&__dialog--sm {
+		@extend %modal__dialog--sm;
+	}
+
+	&__dialog--lg {
+		@extend %modal__dialog--lg;
+	}
+
+	&__dialog--full {
+		width: $site-drawer-full;
+	}
+
+	&__dialog--left {
+		left: 0;
+	}
+
+	&__dialog--right {
+		right: 0;
+	}
+
+	// &__divider {
+	// 	width: 1px;
+	// 	@include rem(padding-top, .425rem);
+	// 	@include rem(padding-bottom, .425rem);
+	// 	@include rem(margin-top, .$site-drawer-padding-vertical);
+	// 	@include rem(margin-bottom, .$site-drawer-padding-vertical);
+	// 	overflow: hidden;
+  //
+	// 	&::before {
+	// 		content: "\00a0";
+	// 	}
+	// }
+}

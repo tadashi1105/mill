@@ -1,0 +1,23 @@
+// /**
+//  * 0.0 - Widget Recent Comments
+//  *
+//  * Widget recent comments.
+//  */
+
+.widget_recent_comments {
+	> ul {
+		@include rem(padding-left, 1rem);
+		margin-bottom: 0;
+	}
+}
+
+// .widget_recent_comments {
+// 	ul#recentcomments {
+// 		li.recentcomments {
+// 			a {}
+// 			span.comment-author-link {
+// 				a.url {}
+// 			}
+// 		}
+// 	}
+// }

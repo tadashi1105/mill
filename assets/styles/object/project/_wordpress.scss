@@ -1,0 +1,449 @@
+// Default WP Styles
+
+.entry-content img {
+	display: block;
+	// display: inline-block;
+	max-width: 100%;
+	height: auto;
+	&.alignleft {
+		margin-right: .5rem;
+	}
+	&.alignright {
+		margin-left: .5rem;
+	}
+}
+
+.alignleft,
+img.alignleft {
+	@extend .#{$site-prefix}u-pull-xs-left;
+}
+
+.alignright,
+img.alignright {
+	@extend .#{$site-prefix}u-pull-xs-right;
+}
+
+.aligncenter,
+img.aligncenter {
+	@extend .#{$site-prefix}u-center-block;
+}
+
+// .alignnone, img.alignnone {}
+
+.wp-caption {
+	@extend .#{$site-prefix}c-figure;
+	max-width: 100%;
+	&.alignleft {
+		margin-right: .5rem;
+	}
+	&.alignright {
+		margin-left: .5rem;
+	}
+}
+
+// .wp-caption img {}
+.wp-caption-text,
+.wp-caption p.wp-caption-text {
+	@extend .#{$site-prefix}c-figure__caption;
+}
+
+// .wp-smiley {}
+
+// blockquote.left {}
+// blockquote.right {}
+//
+// .gallery dl {}
+// .gallery dt {}
+// .gallery dd {}
+// .gallery dl a {}
+// .gallery dl img {}
+// .gallery-caption {}
+//
+// .size-full {}
+// .size-large {}
+// .size-medium {}
+// .size-thumbnail {}
+
+.screen-reader-text {
+	@extend .#{$site-prefix}u-sr-only;
+}
+
+.skip-link {
+	@extend .#{$site-prefix}u-sr-only-focusable;
+}
+
+
+// Default Body Class Styles
+
+// .rtl {}
+// .home {}
+// .blog {}
+// .archive {}
+// .date {}
+// .search {}
+// .paged {}
+// .attachment {}
+// .error404 {}
+// .single postid-(id) {}
+// .attachmentid-(id) {}
+// .attachment-(mime-type) {}
+// .author {}
+// .author-(user_nicename) {}
+// .category {}
+// .category-(slug) {}
+// .tag {}
+// .tag-(slug) {}
+// .page-parent {}
+// .page-child parent-pageid-(id) {}
+// .page-template page-template-(template file name) {}
+// .search-results {}
+// .search-no-results {}
+// .logged-in {}
+// .paged-(page number) {}
+// .single-paged-(page number) {}
+// .page-paged-(page number) {}
+// .category-paged-(page number) {}
+// .tag-paged-(page number) {}
+// .date-paged-(page number) {}
+// .author-paged-(page number) {}
+// .search-paged-(page number) {}
+
+
+// Default Post Styles
+
+// .post-id {}
+// .post {}
+// .page {}
+// .attachment {}
+// .sticky {}
+// .hentry {}
+// .category-misc {}
+// .category-example {}
+// .tag-news {}
+// .tag-wordpress {}
+// .tag-markup {}
+//
+// .format-image {}
+// .format-gallery {}
+// .format-chat {}
+// .format-link {}
+// .format-quote {}
+// .format-status {}
+// .format-video {}
+
+
+// Default Menu Styles
+
+// .main-menu{} // container class
+// .main-menu ul {} // container class first unordered list
+// .main-menu ul ul {} //unordered list within an unordered list
+// .main-menu li {} // each navigation item
+// .main-menu li a {} // each navigation item anchor
+// .main-menu li ul {} // unordered list if there is drop down items
+// .main-menu li li {} // each drop down navigation item
+// .main-menu li li a {} // each drap down navigation item anchor
+
+// .current_page_item{} // Class for Current Page
+// .current-cat{} // Class for Current Category
+// .current-menu-item{} // Class for any other current Menu Item
+// .menu-item {}
+// .menu-item-(id) {}
+// .menu-item-type-taxonomy{} // Class for a Category
+// .menu-item-type-post_type {} // Class for Pages
+// .menu-item-type-custom {} // Class for any custom item that you added
+// .menu-item-home {} // Class for the Home Link
+// .menu-item-object-page {}
+// .menu-item-has-children {}
+// .sub-menu {}
+
+// Default WYSIWYG Editor Styles
+// .entry-content img {}
+// .alignleft, img.alignleft {}
+// .alignright, img.alignright {}
+// .aligncenter, img.aligncenter {}
+// .alignnone, img.alignnone {}
+//
+// .wp-caption {}
+// .wp-caption img {}
+// .wp-caption p.wp-caption-text {}
+//
+// .wp-smiley {}
+//
+// blockquote.left {}
+// blockquote.right {}
+//
+// .gallery dl {}
+// .gallery dt {}
+// .gallery dd {}
+// .gallery dl a {}
+// .gallery dl img {}
+// .gallery-caption {}
+//
+// .size-full {}
+// .size-large {}
+// .size-medium {}
+// .size-thumbnail {}
+
+// Default The Content Styles
+// .post-password-form {}
+// #pwbox-{number} {}
+
+// Default WordPress Widget Styles
+// .widget {}
+//
+// #searchform {}
+// .widget_search {}
+// .screen-reader-text {}
+
+// .widget_meta {}
+// .widget_meta ul {}
+// .widget_meta ul li {}
+// .widget_meta ul li a {}
+//
+// .widget_links {}
+// .widget_links ul {}
+// .widget_links ul li {}
+// .widget_links ul li a {}
+// .widget_links li:after {}
+// .widget_links li:before {}
+
+// .widget_nav_menu {}
+//
+// .widget_archive {}
+// .widget_archive ul {}
+// .widget_archive ul li {}
+// .widget_archive ul li a {}
+// .widget_archive select {}
+// .widget_archive option {}
+//
+// .widget_pages {}
+// .widget_pages ul {}
+// .widget_pages ul li {}
+// .widget_pages ul li a {}
+//
+// .widget_tag_cloud {}
+// .widget_tag_cloud a {}
+// .widget_tag_cloud a:after {}
+// .widget_tag_cloud a:before {}
+//
+// .widget_calendar {}
+// #calendar_wrap {}
+// #calendar_wrap th {}
+// #calendar_wrap td {}
+// #wp-calendar tr td {}
+// #wp-calendar caption {}
+// #wp-calendar a {}
+// #wp-calendar #today {}
+// #wp-calendar #prev {}
+// #wp-calendar #next {}
+// #wp-calendar #next a {}
+// #wp-calendar #prev a {}
+//
+// .widget_categories {}
+// .widget_categories ul {}
+// .widget_categories ul li {}
+// .widget_categories ul ul.children {}
+// .widget_categories a {}
+// .widget_categories select{}
+// .widget_categories select#cat {}
+// .widget_categories select.postform {}
+// .widget_categories option {}
+// .widget_categories .level-0 {}
+// .widget_categories .level-1 {}
+// .widget_categories .level-2 {}
+// .widget_categories .level-3 {}
+//
+// .recentcomments {}
+// #recentcomments {}
+// #recentcomments li {}
+// #recentcomments li a {}
+// .widget_recent_comments {}
+//
+// .widget_recent_entries {}
+// .widget_recent_entries ul {}
+// .widget_recent_entries ul li {}
+// .widget_recent_entries ul li a {}
+//
+// .textwidget {}
+// .widget_text {}
+// .textwidget p {}
+//
+// .widget_pages ul, .widget_archive ul {}
+
+
+// Default Comment Form Styles
+// Comment Output
+
+// .comment-list {
+	// li.coment,
+	// li.even,
+	// li.odd,
+	// li.alt,
+	// li.thread-even,
+	// li.thread-odd,
+	// li.thread-alt,
+	// li.depth-1,
+	// li.depth-2,
+	// li.depth-3,
+	// li.depth-4,
+	// li.depth-5,
+	// li.depth-6,
+	// li.depth-7,
+	// li.depth-8,
+	// li.depth-9,
+	// li.depth-10,
+	// li.parent {
+	// 	article.comment-body{
+	// 		footer.comment-meta {
+	// 			div.comment-author,
+	// 			div.vcard {
+	// 				img.avatar,
+	// 				img.photo {}
+	// 				b.fn {
+	// 					a.url {}
+	// 				}
+	// 				span.says {}
+	// 			}
+	// 			div.comment-metadata {
+	// 				a {
+	// 					time {}
+	// 				}
+	// 				span.edit-link {
+	// 					a.comment-edit-link {}
+	// 				}
+	// 			}
+	// 		}
+	// 		div.comment-content {
+	// 			p {}
+	// 		}
+	// 		div.reply {
+	// 			a.comment-reply-link {}
+	// 		}
+	// 	}
+	// 	ol.children {}
+	// 	.children {
+	// 		li.comment,
+	// 		li.even,
+	// 		li.odd,
+	// 		li.alt,
+	// 		li.depth-2,
+	// 		li.depth-3,
+	// 		li.depth-4,
+	// 		li.depth-5,
+	// 		li.depth-6,
+	// 		li.depth-7,
+	// 		li.depth-8,
+	// 		li.depth-9,
+	// 		li.depth-10,
+	// 		li.parent {}
+	// 	}
+	// }
+// }
+
+// .comment-list .vcard cite.fn {}
+// .comment-list .vcard cite.fn a.url {}
+
+// .comment-list .pingback {}
+// .comment-list .bypostauthor {}
+// .comment-list .comment-author-admin {}
+
+// .comment-list li ol.children li.byuser {}
+// .comment-list li ol.children li.bypostauthor {}
+// .comment-list li ol.children li.comment-author-admin {}
+//
+// #cancel-comment-reply {}
+// #cancel-comment-reply a {}
+
+
+// Comment Form
+
+// #respond.comment-respond {
+//   #reply-title.comment-reply-title {
+//     small a#cancel-comment-reply-link {}
+//   }
+//   form#commentform.comment-from {
+//     .logged-in-as {
+//       a {}
+//     }
+//     .comment-form-comment {
+//       label {}
+//       textarea#comment {}
+//     }
+//     .form-submit {
+//       input#submit {}
+//     }
+//     .comment-notes {}
+//     .required {}
+//     .comment-form-author {
+//       input#author {}
+//     }
+//     .comment-form-email {
+//       input#email {}
+//     }
+//     .comment-form-url {
+//       input#url {}
+//     }
+//     .comment-form-comment {}
+//     .form-allowed-tags {}
+//   }
+// }
+
+// Default Themes Styles
+// .site {}
+// .site-header {}
+// .site-branding {}
+// .site-title {}
+// .site-description {}
+// .site-main {}
+// .site-info {}
+// .main-navigation {}
+// .navigation {}
+// .pagination {
+// 	.nav-links {}
+// 	.page-numbers {}
+// 	.dots {}
+// 	.current {}
+// 	.prev {}
+// 	.next {}
+// }
+// .posts-navigation {
+// 	.nav-links {}
+// 	.nav-previous {}
+// 	.nav-next {}
+// }
+// .post-navigation {
+// 	.nav-links {}
+// 	.nav-previous {}
+// 	.nav-next {}
+// }
+// .meta-nav {}
+// .skip-link {}
+// .cat-links {}
+// .tags-links {}
+// .entry-format {}
+// .entry-header {}
+// .entry-title {}
+// .entry-content {}
+// .entry-summary {}
+// .entry-meta {}
+// .edit-link {}
+// .posted-on {}
+// .sticky-post {}
+// .byline {}
+// .author {}
+// .vcard {}
+// .url.fn.n {}
+// .full-size-link {}
+// .author-link {}
+// .post-thumbnail {}
+// .more-link {}
+// .secondary {}
+// .social-navigation {}
+// #header {}
+// #masthead {}
+// #footer {}
+// #sidebar {}
+// #secondary {}
+// #colophon {}
+// #site-navigation {}
+// #main {}

@@ -1,0 +1,196 @@
+//
+// Base styles
+//
+
+.#{$site-prefix}c-btn {
+	display: inline-block;
+	font-weight: $site-btn-font-weight;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	user-select: none;
+	border: $site-input-btn-border-width solid transparent;
+	@include button-size($site-btn-padding-y, $site-btn-padding-x, $site-font-size-base, $site-line-height, $site-btn-border-radius);
+	@include transition(all .2s ease-in-out);
+
+	&,
+	&:active,
+	&.active {
+		&:focus,
+		&.focus {
+			@include tab-focus();
+		}
+	}
+
+	@include hover-focus {
+		text-decoration: none;
+	}
+	&.focus {
+		text-decoration: none;
+	}
+
+	&:active,
+	&.active {
+		background-image: none;
+		outline: 0;
+		@include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+	}
+
+	&.disabled,
+	&:disabled {
+		cursor: $site-cursor-disabled;
+		opacity: .65;
+		@include box-shadow(none);
+	}
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.#{$site-prefix}c-btn.disabled,
+fieldset[disabled] a.#{$site-prefix}c-btn {
+	pointer-events: none;
+}
+
+
+//
+// Alternate buttons
+//
+
+.#{$site-prefix}c-btn--primary {
+	@include button-variant($site-btn-primary-color, $site-btn-primary-bg, $site-btn-primary-border);
+}
+.#{$site-prefix}c-btn--secondary {
+	@include button-variant($site-btn-secondary-color, $site-btn-secondary-bg, $site-btn-secondary-border);
+}
+// .#{$site-prefix}c-btn--info {
+// 	@include button-variant($site-btn-info-color, $site-btn-info-bg, $site-btn-info-border);
+// }
+// .#{$site-prefix}c-btn--success {
+// 	@include button-variant($site-btn-success-color, $site-btn-success-bg, $site-btn-success-border);
+// }
+// .#{$site-prefix}c-btn--warning {
+// 	@include button-variant($site-btn-warning-color, $site-btn-warning-bg, $site-btn-warning-border);
+// }
+// .#{$site-prefix}c-btn--danger {
+// 	@include button-variant($site-btn-danger-color, $site-btn-danger-bg, $site-btn-danger-border);
+// }
+
+// Remove all backgrounds
+// .#{$site-prefix}c-btn--primary-outline {
+// 	@include button-outline-variant($site-btn-primary-bg);
+// }
+// .#{$site-prefix}c-btn--secondary-outline {
+// 	@include button-outline-variant($site-btn-secondary-border);
+// }
+// .#{$site-prefix}c-btn--info-outline {
+// 	@include button-outline-variant($site-btn-info-bg);
+// }
+// .#{$site-prefix}c-btn--success-outline {
+// 	@include button-outline-variant($site-btn-success-bg);
+// }
+// .#{$site-prefix}c-btn--warning-outline {
+// 	@include button-outline-variant($site-btn-warning-bg);
+// }
+// .#{$site-prefix}c-btn--danger-outline {
+// 	@include button-outline-variant($site-btn-danger-bg);
+// }
+
+
+//
+// Link buttons
+//
+
+// Make a button look and behave like a link
+// .#{$site-prefix}c-btn--link {
+// 	font-weight: normal;
+// 	color: $site-link-color;
+// 	border-radius: 0;
+//
+// 	&,
+// 	&:active,
+// 	&.active,
+// 	&:disabled {
+// 		background-color: transparent;
+// 		@include box-shadow(none);
+// 	}
+// 	&,
+// 	&:focus,
+// 	&:active {
+// 		border-color: transparent;
+// 	}
+// 	@include hover {
+// 		border-color: transparent;
+// 	}
+// 	@include hover-focus {
+// 		color: $site-link-hover-color;
+// 		text-decoration: $site-link-hover-decoration;
+// 		background-color: transparent;
+// 	}
+// 	&:disabled {
+// 		@include hover-focus {
+// 			color: $site-btn-link-disabled-color;
+// 			text-decoration: none;
+// 		}
+// 	}
+// }
+
+
+//
+// Button Sizes
+//
+
+.#{$site-prefix}c-btn--lg {
+	// line-height: ensure even-numbered height of button next to large input
+	@include button-size($site-btn-padding-y-lg, $site-btn-padding-x-lg, $site-font-size-lg, $site-line-height-lg, $site-btn-border-radius-lg);
+}
+.#{$site-prefix}c-btn--sm {
+	// line-height: ensure proper height of button next to small input
+	@include button-size($site-btn-padding-y-sm, $site-btn-padding-x-sm, $site-font-size-sm, $site-line-height-sm, $site-btn-border-radius-sm);
+}
+
+
+//
+// Block button
+//
+
+.#{$site-prefix}c-btn--block {
+	display: block;
+	width: 100%;
+
+
+	// Vertically space out multiple block buttons
+	& + & {
+		margin-top: 5px;
+	}
+}
+
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	&.#{$site-prefix}c-btn--block {
+		width: 100%;
+	}
+}
+
+.#{$site-prefix}c-btn--social {
+	text-align: center;
+	padding-left: 0;
+	padding-right: 0;
+
+	.fa,
+	[class^="icon-"],
+	[class*=" icon-"],
+	.#{$site-prefix}c-btn__icon {
+		@include rem(margin-bottom, .25rem);
+		display: block;
+		font-size: $site-font-size-lg;
+		// min-width: 1rem;
+	}
+
+	.#{$site-prefix}c-btn__text {
+		display: block;
+		@include rem(font-size, $site-font-size-xs);
+	}
+}

@@ -1,0 +1,113 @@
+// Default Comment Form Styles
+// Comment Output
+
+.comment-list {
+	list-style: none;
+	padding: 0;
+
+	.children {
+		list-style: none;
+	}
+
+	.avatar {
+		float: left;
+		margin-right: 10px;
+		border-radius: 50%;
+		width: 48px;
+		height: 48px;
+
+		@include media-breakpoint-up(md) {
+			width: 80px;
+			height: 80px;
+		}
+	}
+
+	.children {
+		padding-left: 1rem;
+		@include media-breakpoint-up(md) {
+			padding-left: 2.5rem;
+		}
+	}
+
+	.bypostauthor {
+		background-color: #fff;
+	}
+
+  // li.coment,
+  // li.even,
+  // li.odd,
+  // li.alt,
+  // li.thread-even,
+  // li.thread-odd,
+  // li.thread-alt,
+  // li.depth-1,
+  // li.depth-2,
+  // li.depth-3,
+  // li.depth-4,
+  // li.depth-5,
+  // li.depth-6,
+  // li.depth-7,
+  // li.depth-8,
+  // li.depth-9,
+  // li.depth-10,
+  // li.parent {
+  //   article.comment-body{
+  //     footer.comment-meta {
+  //       div.comment-author,
+  //       div.vcard {
+  //         img.avatar,
+  //         img.photo {}
+  //         b.fn {
+  //           a.url {}
+  //         }
+  //         span.says {}
+  //       }
+  //       div.comment-metadata {
+  //         a {
+  //           time {}
+  //         }
+  //         span.edit-link {
+  //           a.comment-edit-link {}
+  //         }
+  //       }
+  //     }
+  //     div.comment-content {
+  //       p {}
+  //     }
+  //     div.reply {
+  //       a.comment-reply-link {}
+  //     }
+  //   }
+  //   ol.children {}
+  //   .children {
+  //     li.comment,
+  //     li.even,
+  //     li.odd,
+  //     li.alt,
+  //     li.depth-2,
+  //     li.depth-3,
+  //     li.depth-4,
+  //     li.depth-5,
+  //     li.depth-6,
+  //     li.depth-7,
+  //     li.depth-8,
+  //     li.depth-9,
+  //     li.depth-10,
+  //     li.parent {}
+  //   }
+  // }
+}
+
+// .comment-list .vcard cite.fn {}
+// .comment-list .vcard cite.fn a.url {}
+
+// .comment-list .pingback {}
+// .comment-list .bypostauthor {}
+// .comment-list .comment-author-admin {}
+
+// .comment-list li ol.children li.byuser {}
+// .comment-list li ol.children li.bypostauthor {}
+// .comment-list li ol.children li.comment-author-admin {}
+//
+// #cancel-comment-reply {}
+// #cancel-comment-reply a {}

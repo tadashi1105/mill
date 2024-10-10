@@ -1,0 +1,453 @@
+//
+// Textual form controls
+//
+// .#{$site-prefix}c-form {}
+
+.#{$site-prefix}c-form__control {
+	display: block;
+	width: 100%;
+	// // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+	// height: $input-height;
+	padding: $site-input-padding-y $site-input-padding-x;
+	font-size: $site-font-size-base;
+	line-height: $site-line-height;
+	color: $site-input-color;
+	background-color: $site-input-bg;
+	// Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214.
+	background-image: none;
+	border: $site-input-btn-border-width solid $site-input-border-color;
+	// Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
+	@include border-radius($site-input-border-radius);
+	@include box-shadow($site-input-box-shadow);
+	@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+
+	// Make inputs at least the height of their button counterpart (base line-height + padding + border).
+	// Only apply the height to textual inputs and some selects.
+	// &:not(textarea),
+	// &:not(select[size]),
+	// &:not(select[multiple]) {
+		//   height: $site-input-height;
+	// }
+
+	// Unstyle the caret on `<select>`s in IE10+.
+	&::-ms-expand {
+		background-color: transparent;
+		border: 0;
+	}
+
+	// Customize the `:focus` state to imitate native WebKit styles.
+	@include form-control-focus();
+
+	// Placeholder
+	&::placeholder {
+		color: $site-input-color-placeholder;
+		// Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+		opacity: 1;
+	}
+
+	// Disabled and read-only inputs
+	//
+	// HTML5 says that controls under a fieldset > legend:first-child won't be
+	// disabled if the fieldset is disabled. Due to implementation difficulty, we
+	// don't honor that edge case; we style them as disabled anyway.
+	&:disabled,
+	&[readonly] {
+		background-color: $site-input-bg-disabled;
+		// iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+		opacity: 1;
+	}
+
+	&:disabled {
+		cursor: $site-cursor-disabled;
+	}
+}
+
+
+// Make file inputs better match text inputs by forcing them to new lines.
+.#{$site-prefix}c-form__control--file,
+.#{$site-prefix}c-form__control--range {
+	display: block;
+}
+
+
+//
+// Labels
+//
+
+// For use with horizontal and inline forms, when you need the label text to
+// align with the form controls.
+.#{$site-prefix}c-form__control--label {
+	padding: $site-input-padding-y $site-input-padding-x;
+	margin-bottom: 0; // Override the `<label>` default
+}
+
+
+// Todo: clear this up
+
+// Special styles for iOS temporal inputs
+//
+// In Mobile Safari, setting `display: block` on temporal inputs causes the
+// text within the input to become vertically misaligned. As a workaround, we
+// set a pixel line-height that matches the given height of the input, but only
+// for Safari. See https://bugs.webkit.org/show_bug.cgi?id=139848
+//
+// Note that as of 8.3, iOS doesn't support `datetime` or `week`.
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+	input[type="date"],
+	input[type="time"],
+	input[type="datetime-local"],
+	input[type="month"] {
+		&.#{$site-prefix}c-form__control {
+			line-height: $site-input-height;
+		}
+
+		&.#{$site-prefix}c-input--sm,
+		.#{$site-prefix}c-input__group--sm &.#{$site-prefix}c-form__control {
+			line-height: $site-input-height-sm;
+		}
+
+		&.#{$site-prefix}c-input--lg,
+		.#{$site-prefix}c-input__group--lg &.#{$site-prefix}c-form__control {
+			line-height: $site-input-height-lg;
+		}
+	}
+}
+
+
+// Static form control text
+//
+// Apply class to an element to make any string of text align with labels in a
+// horizontal form layout.
+
+.#{$site-prefix}c-form__control--static {
+	min-height: $site-input-height;
+	// Size it appropriately next to real form controls
+	padding-top: $site-input-padding-y;
+	padding-bottom: $site-input-padding-y;
+	// Remove default margin from `p`
+	margin-bottom: 0;
+
+	&.#{$site-prefix}c-form__control--sm,
+	&.#{$site-prefix}c-form__control--lg {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+
+// Form control sizing
+//
+// Build on `.form-control` with modifier classes to decrease or increase the
+// height and font-size of form controls.
+//
+// The `.form-group-* form-control` variations are sadly duplicated to avoid the
+// issue documented in https://github.com/twbs/bootstrap/issues/15074.
+
+.#{$site-prefix}c-form__control--sm {
+	// height: $input-height-sm;
+	padding: $site-input-padding-y-sm $site-input-padding-x-sm;
+	font-size: $site-font-size-sm;
+	line-height: $site-line-height-sm;
+	@include border-radius($site-input-border-radius-sm);
+}
+
+.#{$site-prefix}c-form__control--lg {
+	// height: $site-input-height-lg;
+	padding: $site-input-padding-y-lg $site-input-padding-x-lg;
+	font-size: $site-font-size-lg;
+	line-height: $site-line-height-lg;
+	@include border-radius($site-input-border-radius-lg);
+}
+
+
+// Form groups
+//
+// Designed to help with the organization and spacing of vertical forms. For
+// horizontal forms, use the predefined grid classes.
+
+.#{$site-prefix}c-form__group {
+	margin-bottom: $site-form-group-margin-bottom;
+}
+
+
+// Checkboxes and radios
+//
+// Indent the labels to position radios/checkboxes as hanging controls.
+
+.#{$site-prefix}c-form__radio,
+.#{$site-prefix}c-form__checkbox {
+	position: relative;
+	display: block;
+	// margin-top:    ($site-spacer * .75);
+	margin-bottom: ($site-spacer * .75);
+
+	label {
+		padding-left: 1.25rem;
+		margin-bottom: 0;
+		font-weight: normal;
+		cursor: pointer;
+
+		// When there's no labels, don't position the input.
+		input:only-child {
+			position: static;
+		}
+	}
+}
+.#{$site-prefix}c-form__radio input[type="radio"],
+.#{$site-prefix}c-form__radio--inline input[type="radio"],
+.#{$site-prefix}c-form__checkbox input[type="checkbox"],
+.#{$site-prefix}c-form__checkbox--inline input[type="checkbox"] {
+	position: absolute;
+	margin-top: .25rem;
+	// margin-top: 4px \9;
+	margin-left: -1.25rem;
+}
+
+.#{$site-prefix}c-form__radio + .#{$site-prefix}c-form__radio,
+.#{$site-prefix}c-form__checkbox + .#{$site-prefix}c-form__checkbox {
+	// Move up sibling radios or checkboxes for tighter spacing
+	margin-top: -.25rem;
+}
+
+// Radios and checkboxes on same line
+.#{$site-prefix}c-form__radio--inline,
+.#{$site-prefix}c-form__checkbox--inline {
+	position: relative;
+	display: inline-block;
+	padding-left: 1.25rem;
+	margin-bottom: 0;
+	font-weight: normal;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.#{$site-prefix}c-form__radio--inline + .#{$site-prefix}c-form__radio--inline,
+.#{$site-prefix}c-form__checkbox--inline + .#{$site-prefix}c-form__checkbox--inline {
+	margin-top: 0;
+	margin-left: .75rem;
+}
+
+// Apply same disabled cursor tweak as for inputs
+// Some special care is needed because <label>s don't inherit their parent's `cursor`.
+//
+// Note: Neither radios nor checkboxes can be readonly.
+input[type="radio"],
+input[type="checkbox"] {
+	&:disabled,
+	&.disabled {
+		cursor: $site-cursor-disabled;
+	}
+}
+// These classes are used directly on <label>s
+.#{$site-prefix}c-form__radio--inline,
+.#{$site-prefix}c-form__checkbox--inline {
+	&.disabled {
+		cursor: $site-cursor-disabled;
+	}
+}
+// These classes are used on elements with <label> descendants
+.#{$site-prefix}c-form__radio,
+.#{$site-prefix}c-form__checkbox {
+	&.disabled {
+		label {
+			cursor: $site-cursor-disabled;
+		}
+	}
+}
+
+
+// Form control feedback states
+//
+// Apply contextual and semantic states to individual form controls.
+
+.#{$site-prefix}c-form__control--success,
+.#{$site-prefix}c-form__control--warning,
+.#{$site-prefix}c-form__control--danger {
+	padding-right: ($site-input-padding-x * 3);
+	background-repeat: no-repeat;
+	background-position: center right ($site-input-height * .25);
+	background-size: ($site-input-height * .65) ($site-input-height * .65);
+}
+
+// Form validation states
+.has-success {
+	@include form-control-validation($site-brand-success);
+
+	.#{$site-prefix}c-form__control--success {
+		background-image: url($site-form-icon-success);
+	}
+}
+
+.has-warning {
+	@include form-control-validation($site-brand-warning);
+
+	.#{$site-prefix}c-form__control--warning {
+		background-image: url($site-form-icon-warning);
+	}
+}
+
+.has-danger {
+	@include form-control-validation($site-brand-danger);
+
+	.#{$site-prefix}c-form__control--danger {
+		background-image: url($site-form-icon-danger);
+	}
+}
+
+
+
+
+// .form-control-success {
+//   background-image: url("#{$site-form-icon-success}");
+//   border-color: $site-brand-success;
+// }
+//
+// .form-control-warning {
+//   background-image: url("#{$site-form-icon-warning}");
+//   border-color: $site-brand-warning;
+// }
+//
+// .form-control-error {
+//   background-image: url("#{$site-form-icon-danger}");
+//   border-color: $site-brand-danger;
+// }
+
+
+// .has-feedback {
+//   // Enable absolute positioning
+//   position: relative;
+//
+//   // Ensure icons don't overlap text
+//   .form-control {
+//     padding-right: ($site-input-height * 1.25);
+//   }
+// }
+// // Feedback icon
+// .form-control-feedback {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   z-index: 2; // Ensure icon is above input groups
+//   display: block;
+//   width: $site-input-height;
+//   height: $site-input-height;
+//   line-height: $site-input-height;
+//   text-align: center;
+//   pointer-events: none;
+// }
+// .input-lg + .form-control-feedback,
+// .input-group-lg + .form-control-feedback {
+//   width: $site-input-height-lg;
+//   height: $site-input-height-lg;
+//   line-height: $site-input-height-lg;
+// }
+// .input-sm + .form-control-feedback,
+// .input-group-sm + .form-control-feedback {
+//   width: $site-input-height-sm;
+//   height: $site-input-height-sm;
+//   line-height: $site-input-height-sm;
+// }
+//
+// // Form validation states
+// .has-success {
+//   @include form-control-validation($site-state-success-text, $site-state-success-text, $site-state-success-bg);
+// }
+// .has-warning {
+//   @include form-control-validation($site-state-warning-text, $site-state-warning-text, $site-state-warning-bg);
+// }
+// .has-danger {
+//   @include form-control-validation($site-state-danger-text, $site-state-danger-text, $site-state-danger-bg);
+// }
+//
+// // Reposition feedback icon if input has visible label above
+// .has-feedback label {
+//
+//   ~ .form-control-feedback {
+//     // TODO: redo this since we nuked the `$site-line-height-computed`
+//     top: 0; // Height of the `label` and its margin
+//   }
+//
+//   &.sr-only ~ .form-control-feedback {
+//     top: 0;
+//   }
+// }
+
+
+// Inline forms
+//
+// Make forms appear inline(-block) by adding the `.form-inline` class. Inline
+// forms begin stacked on extra small (mobile) devices and then go inline when
+// viewports reach <768px.
+//
+// Requires wrapping inputs and labels with `.form-group` for proper display of
+// default HTML form controls and our custom form controls (e.g., input groups).
+
+.#{$site-prefix}c-form--inline {
+
+	// Kick in the inline
+	@include media-breakpoint-up(sm) {
+		// Inline-block all the things for "inline"
+		.#{$site-prefix}c-form__group {
+			display: inline-block;
+			margin-bottom: 0;
+			vertical-align: middle;
+		}
+
+		// Allow folks to *not* use `.form-group`
+		.#{$site-prefix}c-form__control {
+			display: inline-block;
+			width: auto; // Prevent labels from stacking above inputs in `.form-group`
+			vertical-align: middle;
+		}
+
+		// Make static controls behave like regular ones
+		.#{$site-prefix}c-form__control--static {
+			display: inline-block;
+		}
+
+		.#{$site-prefix}c-input__group {
+			display: inline-table;
+			vertical-align: middle;
+
+			.#{$site-prefix}c-input__group-addon,
+			.#{$site-prefix}c-input__group-btn,
+			.#{$site-prefix}c-form__control {
+				width: auto;
+			}
+		}
+
+		// Input groups need that 100% width though
+		.#{$site-prefix}c-input__group > .#{$site-prefix}c-form__control {
+			width: 100%;
+		}
+
+		.#{$site-prefix}c-form__control--label {
+			margin-bottom: 0;
+			vertical-align: middle;
+		}
+
+		// Remove default margin on radios/checkboxes that were used for stacking, and
+		// then undo the floating of radios and checkboxes to match.
+		.#{$site-prefix}c-form__radio,
+		.#{$site-prefix}c-form__checkbox {
+			display: inline-block;
+			margin-top: 0;
+			margin-bottom: 0;
+			vertical-align: middle;
+
+			label {
+				padding-left: 0;
+			}
+		}
+		.#{$site-prefix}c-form__radio input[type="radio"],
+		.#{$site-prefix}c-form__checkbox input[type="checkbox"] {
+			position: relative;
+			margin-left: 0;
+		}
+
+		// Re-override the feedback icon.
+		.has-feedback .#{$site-prefix}c-form__control--feedback {
+			top: 0;
+		}
+	}
+}

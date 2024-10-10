@@ -1,0 +1,187 @@
+$site-gray-base:          black !default;
+$site-gray-darkest:  lighten($site-gray-base, 12.5%) !default;
+$site-gray-darker:   lighten($site-gray-base, 25%) !default;
+$site-gray-dark:     lighten($site-gray-base, 37.5%) !default;
+$site-gray:          lighten($site-gray-base, 50%) !default;
+$site-gray-light:    lighten($site-gray-base, 62.5%) !default;
+$site-gray-lighter:  lighten($site-gray-base, 75%) !default;
+$site-gray-lightest: lighten($site-gray-base, 87.5%) !default;
+
+// $site-gray-darker:   lighten($site-gray-base, 16.6666%) !default;
+// $site-gray-dark:     lighten($site-gray-base, 33.3333%) !default;
+// $site-gray:          lighten($site-gray-base, 49.9999%) !default;
+// $site-gray-light:    lighten($site-gray-base, 66.6666%) !default;
+// $site-gray-lighter:  lighten($site-gray-base, 83.3333%) !default;
+
+$site-brand-primary: #0275d8 !default;
+$site-brand-success: #5cb85c !default;
+$site-brand-info:    #5bc0de !default;
+$site-brand-warning: #f0ad4e !default;
+$site-brand-danger:  #d9534f !default;
+
+$site-accent-color:  complement($site-brand-primary) !default;
+$site-white:  #fff !default;
+
+$site-dark-contrast-color:                 rgba(255, 255, 255, .6) !default;
+$site-dark-contrast-hover-color:           rgba(255, 255, 255, .8) !default;
+$site-dark-contrast-active-color:          rgba(255, 255, 255, 1) !default;
+$site-dark-contrast-disabled-color:        rgba(255, 255, 255, .4) !default;
+
+$site-light-contrast-color:                rgba(0, 0, 0, .5) !default;
+$site-light-contrast-hover-color:          rgba(0, 0, 0, .7) !default;
+$site-light-contrast-active-color:         rgba(0, 0, 0, .9) !default;
+$site-light-contrast-disabled-color:       rgba(0, 0, 0, .3) !default;
+
+
+// SASS style sheet */
+// Palette color codes */
+// Palette URL: http://paletton.com/#uid=33s0u0ktvWUhAXxnHXjHWVoRWB9 */
+
+// Feel free to copy&paste color codes to your application */
+
+
+// As hex codes */
+
+$color-primary-0: #1EAEF3;	// Main Primary color */
+$site-brand-primary: $color-primary-0;
+// $site-mix-color:  mix($site-brand-primary, $site-gray-darkest, 1%) !default;
+$site-hue: hue($site-brand-primary) !default;
+$site-saturation: saturation($site-brand-primary) !default;
+$site-lightness: lightness($site-gray-darkest) !default;
+$site-mix-color:  hsl($site-hue, $site-saturation, $site-lightness) !default;
+
+$site-hue2: hue($site-brand-primary) !default;
+$site-saturation2: saturation($site-brand-primary) !default;
+$site-lightness2: lightness($site-gray-lightest) !default;
+$site-mix-color2: hsl($site-hue2, $site-saturation2, $site-lightness2) !default;
+// $site-bg-color: lighten(hsl($site-hue2, $site-saturation2, $site-lightness2), 8%);
+// $site-mix-color2: lighten(hsl($site-hue2, $site-saturation2, $site-lightness2), 10%) !default;
+
+// 乗算
+// $site-red: (red($site-gray-darkest) * red($site-brand-primary)) / 255;
+// $site-green: (green($site-gray-darkest) * green($site-brand-primary)) / 255;
+// $site-blue: (blue($site-gray-darkest) * blue($site-brand-primary)) / 255;
+
+// スクリーン
+// $site-red: (red($site-gray-lightest) + red($site-brand-primary)) - ((red($site-gray-lightest) * red($site-brand-primary)) / 255);
+// $site-green: (green($site-gray-lightest) + green($site-brand-primary)) - ((green($site-gray-lightest) * green($site-brand-primary)) / 255);
+// $site-blue: (blue($site-gray-lightest) + blue($site-brand-primary)) - ((blue($site-gray-lightest) * blue($site-brand-primary)) / 255);
+// $site-bg-color: rgb($site-red, $site-green, $site-blue);
+
+// $site-mix-color2: rgb($site-red, $site-green, $site-blue) !default;
+
+// $site-mix-color:  lighten(mix($site-brand-primary, $site-gray, 50%), 40%) !default;
+// $site-mix-color:  grayscale($site-brand-primary) !default;
+$color-primary-1: #75CBF5;
+$color-primary-2: #48BCF4;
+$color-primary-3: #07A3EF;
+$color-primary-4: #027AB3;
+
+$color-secondary-1-0: #FFBE14;	// Main Secondary color (1) */
+$color-secondary-1-1: #FFD873;
+$color-secondary-1-2: #FFCB42;
+$color-secondary-1-3: #FFB800;
+$color-secondary-1-4: #FFB800;
+
+$color-secondary-2-0: #FF4514;	// Main Secondary color (2) */
+$color-secondary-2-1: #FF9073;
+$color-secondary-2-2: #FF6A42;
+$color-secondary-2-3: #FF3500;
+$color-secondary-2-4: #FF3500;
+
+
+
+// As RGBa codes */
+
+$rgba-primary-0: rgba( 30,174,243,1);	// Main Primary color */
+$rgba-primary-1: rgba(117,203,245,1);
+$rgba-primary-2: rgba( 72,188,244,1);
+$rgba-primary-3: rgba(  7,163,239,1);
+$rgba-primary-4: rgba(  2,122,179,1);
+
+$rgba-secondary-1-0: rgba(255,190, 20,1);	// Main Secondary color (1) */
+$rgba-secondary-1-1: rgba(255,216,115,1);
+$rgba-secondary-1-2: rgba(255,203, 66,1);
+$rgba-secondary-1-3: rgba(255,184,  0,1);
+$rgba-secondary-1-4: rgba(255,184,  0,1);
+
+$rgba-secondary-2-0: rgba(255, 69, 20,1);	// Main Secondary color (2) */
+$rgba-secondary-2-1: rgba(255,144,115,1);
+$rgba-secondary-2-2: rgba(255,106, 66,1);
+$rgba-secondary-2-3: rgba(255, 53,  0,1);
+$rgba-secondary-2-4: rgba(255, 53,  0,1);
+
+
+
+// Generated by Paletton.com © 2002-2014 */
+// http://paletton.com */
+
+// body background
+// text color
+// heading color
+// link color
+// link hover color
+// base color
+// border color
+
+
+// Colors
+
+// $indigo-50:  #e8eaf6;
+// $indigo-100: #c5cae9;
+// $indigo-200: #9fa8da;
+// $indigo-300: #7986cb;
+// $indigo-400: #5c6bc0;
+// $indigo-500: #3f51b5;
+// $indigo-600: #3949ab;
+// $indigo-700: #303f9f;
+// $indigo-800: #283593;
+// $indigo-900: #1a237e;
+//
+// $pink-A100:  #ff80ab;
+// $pink-A200:  #ff4081;
+// $pink-A400:  #f50057;
+// $pink-A700:  #c51162;
+//
+// $green-100:  #b71c1c;
+// $green-500:  #4caf50;
+// $green-900:  #1b5e20;
+//
+// $blue-100:   #bbdefb;
+// $blue-500:   #2196f3;
+// $blue-900:   #0d47a1;
+//
+// $amber-100:  #ffecb3;
+// $amber-500:  #ffc107;
+// $amber-900:  #ff6f00;
+//
+// $red-100:    #ffcdd2;
+// $red-500:    #f44336;
+// $red-900:    #b71c1c;
+//
+// $gray-50:    #fafafa;
+// $gray-100:   #f5f5f5;
+// $gray-200:   #eeeeee;
+// $gray-300:   #e0e0e0;
+// $gray-400:   #bdbdbd;
+// $gray-500:   #9e9e9e;
+// $gray-600:   #757575;
+// $gray-700:   #616161;
+// $gray-800:   #424242;
+// $gray-900:   #212121;
+
+// $gray-dark:     $gray-700;
+// $gray:          $gray-500;
+// $gray-light:    $gray-400;
+// $gray-lighter:  $gray-200;
+// $gray-lightest: $gray-100;
+
+// $brand-primary:             $indigo-500;
+// $brand-success:             $green-500;
+// $brand-info:                $blue-500;
+// $brand-warning:             $amber-500;
+// $brand-danger:              $red-500;
+
+// $site-pagination-link-color:               $site-light-contrast-color !default;
+// $site-pagination-link-hover-color:         $site-light-contrast-hover-color !default;
+// $site-pagination-link-active-color:        $site-light-contrast-active-color !default;

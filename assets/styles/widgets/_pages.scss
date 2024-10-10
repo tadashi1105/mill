@@ -1,0 +1,26 @@
+// /**
+//  * 0.0 - Widget pages
+//  *
+//  * Widget pages.
+//  */
+
+.widget_pages {
+	> ul {
+		// @extend .#{$site-prefix}c-nav;
+		@include list-unstyled();
+		@extend .#{$site-prefix}u-clearfix;
+	}
+}
+
+// .widget_pages {
+// 	ul {
+// 		li {
+// 			&.page_item {}
+// 			&.page-item-111 {}
+// 			&.page_item_has_children {}
+// 			&.current_page_item {}
+// 			a {}
+// 			ul.children {}
+// 		}
+// 	}
+// }

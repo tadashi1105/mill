@@ -1,0 +1,14 @@
+.#{$site-prefix}p-breadcrumb {
+	@include rem(font-size, $site-breadcrumb-font-size);
+	line-height: $site-breadcrumb-line-height;
+	@include rem(padding, $site-breadcrumb-padding);
+	// background-color: $site-breadcrumb-bg-color;
+	// color: $site-breadcrumb-color;
+  //
+	// a {
+	// 	color: $site-breadcrumb-link-color;
+	// 	@include hover-focus {
+	// 		color: $site-breadcrumb-link-hover-color;
+	// 	}
+	// }
+}

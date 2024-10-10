@@ -1,0 +1,67 @@
+// /**
+//  * 0.0 - Widget
+//  *
+//  * Widget.
+//  */
+
+.#{$site-prefix}p-widget {
+	$this: &;
+
+	&__title {
+		@include rem(font-size, $site-font-size-base);
+		margin-bottom: 0;
+	}
+
+	.#{$site-prefix}c-card__header {
+		border-top: 3px solid $site-brand-primary;
+		@include rem(padding, $site-font-size-xs $site-spacer);
+	}
+
+	// & + & {
+	// 	@include rem(margin-top, map-get(map-get($site-spacers, 3), y));
+	// }
+
+	&--footer {
+		@include rem(font-size, $site-font-size-xs);
+		// color: $site-dark-contrast-color;
+    //
+		// a {
+		// 	color: $site-dark-contrast-color;
+		// 	@include hover-focus {
+		// 		color: $site-dark-contrast-hover-color;
+		// 	}
+		// }
+
+		#{$this}__title {
+			// color: $site-dark-contrast-active-color;
+			@include rem(margin-bottom, $site-font-size-xs);
+		}
+
+		&.widget_meta,
+		&.widget_pages,
+		&.widget_archive,
+		&.widget_categories,
+		&.widget_nav_menu {
+			a {
+				@extend .#{$site-prefix}u-text-truncate;
+			}
+		}
+
+		&.widget_meta > ul,
+		&.widget_pages > ul,
+		&.widget_archive > ul,
+		&.widget_categories > ul,
+		&.widget_nav_menu .menu {
+			> li {
+				float: left;
+				width: 50%;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.#{$site-prefix}p-widget {
+		@include rem(margin-bottom, $site-spacer);
+	}
+}

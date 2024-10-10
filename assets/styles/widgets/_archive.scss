@@ -1,0 +1,27 @@
+// /**
+//  * 0.0 - Widget Archive
+//  *
+//  * Widget archive.
+//  */
+
+.widget_archive {
+	> ul {
+		// @extend .#{$site-prefix}c-nav;
+		@include list-unstyled();
+		@extend .#{$site-prefix}u-clearfix;
+	}
+}
+
+// .widget_archive {
+// 	ul {
+// 		li {
+// 			a {}
+// 		}
+// 	}
+//
+// 	label.screen-reader-text {}
+// 	select {
+// 		#archives-dropdown-3 {}
+// 		option {}
+// 	}
+// }

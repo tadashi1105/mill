@@ -1,0 +1,64 @@
+// Colophon
+
+.#{$site-prefix}p-colophon {
+	text-align: center;
+	color: $site-colophon-text-color;
+	// background-color: $site-colophon-bg-color;
+	@include rem(padding, 1rem 0 1rem);
+	@include rem(font-size, $site-font-size-xs);
+
+	a {
+		color: $site-colophon-link-color;
+		@include hover-focus {
+			color: $site-colophon-link-hover-color;
+			text-decoration: none;
+		}
+	}
+
+	&__nav {
+		@include rem(margin-bottom, $site-font-size-xs);
+		@include media-breakpoint-up(lg) {
+			text-align: left;
+			margin-bottom: 0;
+		}
+	}
+
+	&__copyright {
+		@include media-breakpoint-up(lg) {
+			text-align: right;
+		}
+	}
+
+
+	// Overwrite Component
+
+	.#{$site-prefix}c-nav--inline {
+		display: inline-block;
+
+		.menu-item,
+		.menu-item a {
+			display: inline;
+		}
+
+		.menu-item + .menu-item {
+			a {
+				@include rem(margin-left, .5rem);
+				@include rem(padding-left, .5rem);
+				border-left: 1px solid $site-colophon-link-color;
+			}
+		}
+
+		@include media-breakpoint-down(sm) {
+			.#{$site-prefix}u-br-sm-down + .menu-item a {
+				margin-left: 0;
+				padding-left: 0;
+				border-left: 0;
+			}
+
+			.#{$site-prefix}u-br-sm-down::after {
+				content: "\A" ;
+				white-space: pre ;
+			}
+		}
+	}
+}

@@ -1,0 +1,36 @@
+// Page header
+
+.#{$site-prefix}p-page-header {
+	@include rem(padding, $site-page-header-padding);
+	// background-color: $site-page-header-bg-color;
+
+	&__title {
+		@include rem(font-size, $site-page-header-title);
+		margin-bottom: 0;
+	}
+
+	&__description {
+			@include rem(margin-top, $site-page-header-description-margin-top);
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.#{$site-prefix}c-container {
+		@include rem(padding, 0 1rem);
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.#{$site-prefix}p-page-header {
+		padding: $site-page-header-padding-md;
+
+		&__title {
+			@include rem(font-size, $site-page-header-title-md);
+		}
+
+		&__description {
+			@include rem(margin-top, $site-page-header-description-margin-top-md);
+		}
+	}
+}

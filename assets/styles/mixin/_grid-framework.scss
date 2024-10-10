@@ -1,0 +1,48 @@
+// Framework grid generation
+//
+// Used only by Bootstrap to generate the correct number of grid classes given
+// any value of `$grid-columns`.
+
+@mixin make-grid-columns($columns: $site-grid-columns, $gutter: $site-grid-gutter-width, $breakpoints: $site-grid-breakpoints) {
+	// Common properties for all breakpoints
+	%grid-column {
+		position: relative;
+		// Prevent columns from collapsing when empty
+		min-height: 1px;
+		// Inner gutter via padding
+		@include rem(padding-left, ($gutter / 2));
+		@include rem(padding-right, ($gutter / 2));
+		// @include media-breakpoint-up(md) {
+		// 	@include rem(padding-left, ($site-grid-gutter-width-md / 2));
+		// 	@include rem(padding-right, ($site-grid-gutter-width-md / 2));
+		// }
+	}
+	@each $breakpoint in map-keys($breakpoints) {
+		@for $i from 1 through $columns {
+			.#{$site-prefix}c-col-#{$breakpoint}-#{$i} {
+				@extend %grid-column;
+			}
+		}
+		@include media-breakpoint-up($breakpoint) {
+			// Work around cross-media @extend (https://github.com/sass/sass/issues/1050)
+			%grid-column-float-#{$breakpoint} {
+				float: left;
+			}
+			@for $i from 1 through $columns {
+				.#{$site-prefix}c-col-#{$breakpoint}-#{$i} {
+					@if not $site-enable-flex {
+						@extend %grid-column-float-#{$breakpoint};
+					}
+					@include make-col-span($i, $columns);
+				}
+			}
+			@each $modifier in (pull, push, offset) {
+				@for $i from 0 through $columns {
+					.#{$site-prefix}c-col-#{$breakpoint}-#{$modifier}-#{$i} {
+						@include make-col-modifier($modifier, $i, $columns)
+					}
+				}
+			}
+		}
+	}
+}

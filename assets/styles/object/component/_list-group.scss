@@ -1,0 +1,150 @@
+// Base class
+//
+// Easily usable on <ul>, <ol>, or <div>.
+
+.#{$site-prefix}c-list-group {
+	$this: &;
+
+	@include list-unstyled();
+	// No need to set list-style: none; since .list-group-item is block level
+	// padding-left: 0; // reset padding because ul and ol
+	margin-bottom: 0;
+
+
+	// Individual list items
+	//
+	// Use on `li`s or `div`s within the `.list-group` parent.
+
+	// @at-root .menu-item,
+	.menu-item > a,
+	&__item {
+		position: relative;
+		display: block;
+		@include rem(padding, .5rem 1rem);
+		// Place the border on the list items and negative margin up for better styling
+		margin-bottom: -$site-list-group-border-width;
+		background-color: $site-list-group-bg;
+		border: $site-list-group-border-width solid $site-list-group-border-color;
+
+		// Round the first and last items
+		// &:first-child {
+		// 	@include border-top-radius($site-list-group-border-radius);
+		// }
+    //
+		// &:last-child {
+		// 	margin-bottom: 0;
+		// 	@include border-bottom-radius($site-list-group-border-radius);
+		// }
+	}
+
+
+	// &--flush {
+	// 	#{$this}__item {
+	// 		border-width: $site-list-group-border-width 0;
+	// 		border-radius: 0;
+	// 	}
+  //
+	// 	&:first-child {
+	// 		#{$this}__item:first-child {
+	// 			border-top: 0;
+	// 		}
+	// 	}
+  //
+	// 	&:last-child {
+	// 		#{$this}__item:last-child {
+	// 			border-bottom: 0;
+	// 		}
+	// 	}
+	// }
+}
+
+
+// Interactive list items
+//
+// Use anchor or button elements instead of `li`s or `div`s to create interactive
+// list items. Includes an extra `.active` modifier class for selected items.
+
+.#{$site-prefix}c-list-group .menu-item > a,
+a.#{$site-prefix}c-list-group__item,
+button.#{$site-prefix}c-list-group__item {
+	width: 100%;
+	color: $site-list-group-link-color;
+	text-align: inherit;
+
+	// .#{$site-prefix}c-list-group__item__heading {
+	// 	color: $site-list-group-link-heading-color;
+	// }
+
+	// Hover state
+	@include hover-focus {
+		color: $site-list-group-link-hover-color;
+		text-decoration: none;
+		background-color: $site-list-group-hover-bg;
+	}
+}
+
+.#{$site-prefix}c-list-group .menu-item,
+.#{$site-prefix}c-list-group__item {
+	// Disabled state
+	// &.disabled {
+	// 	@include plain-hover-focus {
+	// 		color: $site-list-group-disabled-color;
+	// 		cursor: $site-cursor-disabled;
+	// 		background-color: $site-list-group-disabled-bg;
+  //
+	// 		// Force color to inherit for custom content
+	// 		.#{$site-prefix}c-list-group__item__heading {
+	// 			color: inherit;
+	// 		}
+	// 		.#{$site-prefix}c-list-group__item__text {
+	// 			color: $site-list-group-disabled-text-color;
+	// 		}
+	// 	}
+	// }
+
+	// Active class on item itself, not parent
+	&.current-menu-item > a,
+	&.active {
+		@include plain-hover-focus {
+			z-index: 2; // Place active items above their siblings for proper border styling
+			color: $site-list-group-active-color;
+			background-color: $site-list-group-active-bg;
+			border-color: $site-list-group-active-border;
+
+			// Force color to inherit for custom content
+			// .#{$site-prefix}c-list-group__item__heading,
+			// .#{$site-prefix}c-list-group__item__heading > small,
+			// .#{$site-prefix}c-list-group__item__heading > .small {
+			// 	color: inherit;
+			// }
+			// .#{$site-prefix}c-list-group__item__text {
+			// 	color: $site-list-group-active-text-color;
+			// }
+		}
+	}
+}
+
+
+// Contextual variants
+//
+// Add modifier classes to change text and background color on individual items.
+// Organizationally, this must come after the `:hover` states.
+
+// @include list-group-item-variant(success, $site-state-success-bg, $site-state-success-text);
+// @include list-group-item-variant(info, $site-state-info-bg, $site-state-info-text);
+// @include list-group-item-variant(warning, $site-state-warning-bg, $site-state-warning-text);
+// @include list-group-item-variant(danger, $site-state-danger-bg, $site-state-danger-text);
+
+
+// Custom content options
+//
+// Extra classes for creating well-formatted content within `.list-group-item`s.
+
+// .#{$site-prefix}c-list-group__item__heading {
+// 	margin-top: 0;
+// 	margin-bottom: 5px;
+// }
+// .#{$site-prefix}c-list-group__item__text {
+// 	margin-bottom: 0;
+// 	line-height: 1.3;
+// }

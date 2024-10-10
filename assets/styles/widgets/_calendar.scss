@@ -1,0 +1,63 @@
+// /**
+//  * 0.0 - Widget Calendar
+//  *
+//  * Widget calendar.
+//  */
+
+// #calendar_wrap {
+// 	@extend .table-responsive;
+// }
+//
+// #wp-calendar {
+// 	@extend .table;
+// 	@extend .table-bordered;
+// 	@extend .table-sm;
+// }
+//
+// #today {
+// 	@extend .table-active;
+// 	color: $site-text-color;
+// }
+//
+// #prev {
+// 	@extend .text-left;
+// }
+//
+// #next {
+// 	@extend .text-right;
+// }
+
+// .widget_calendar {
+// 	div#calendar_wrap {
+// 		table#wp-calendar {
+// 			caption {}
+//
+// 			thead {
+// 				tr {
+// 					th {}
+// 				}
+// 			}
+//
+// 			tfoot {
+// 				tr {
+// 					td {
+// 						&#prev {
+// 							a {}
+// 						}
+// 						&.pad {}
+// 						&#next.pad {}
+// 					}
+// 				}
+// 			}
+//
+// 			tbody {
+// 				tr {
+// 					td {
+// 						&.pad {}
+// 						&#today {}
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }

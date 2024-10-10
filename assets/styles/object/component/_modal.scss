@@ -1,0 +1,87 @@
+// .#{$site-prefix}c-modal-open      - body class for killing the scroll
+// .#{$site-prefix}c-modal           - container to scroll within
+// .#{$site-prefix}c-modal-dialog    - positioning shell for the actual modal
+// .#{$site-prefix}c-modal-content   - actual modal w/ bg and corners and shit
+
+
+// Kill the scroll on the body
+.#{$site-prefix}c-modal-open {
+	@extend %modal-open;
+}
+
+// Container that the modal scrolls within
+.#{$site-prefix}c-modal {
+	$this: &;
+	@extend %modal;
+
+	&.fade &__dialog {
+		@extend %modal_fade---_modal__dialog;
+		@extend %modal_fade---_modal__dialog--top;
+	}
+
+	&.in &__dialog {
+		@extend %modal_in---_modal__dialog;
+	}
+}
+
+.#{$site-prefix}c-modal-open .#{$site-prefix}c-modal {
+	@extend %modal-open---_modal;
+}
+
+// Shell div to position the modal with bottom padding
+.#{$site-prefix}c-modal {
+	&__dialog {
+		@extend %modal__dialog;
+	}
+
+
+	// Actual modal
+	&__content {
+		@extend %modal__content;
+	}
+}
+
+
+// Modal background
+.#{$site-prefix}c-modal-backdrop {
+	@extend %modal-backdrop;
+}
+
+
+// Modal header
+// Top section of the modal w/ title and dismiss
+.#{$site-prefix}c-modal__header {
+	@extend %modal__header;
+}
+
+
+// Title text within header
+.#{$site-prefix}c-modal__title {
+	@extend %modal__title;
+}
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.#{$site-prefix}c-modal__body {
+	@extend %modal__body;
+}
+
+// Footer (for actions)
+.#{$site-prefix}c-modal__footer {
+	@extend %modal__footer;
+}
+
+// Measure scrollbar width for padding body during modal show/hide
+.#{$site-prefix}c-modal-scrollbar-measure {
+	@extend %modal-scrollbar-measure;
+}
+
+// Scale up the modal
+// Modal sizes
+.#{$site-prefix}c-modal__dialog--sm {
+	@extend %modal__dialog--sm;
+}
+
+.#{$site-prefix}c-modal__dialog--lg {
+	@extend %modal__dialog--lg;
+}

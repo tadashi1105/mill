@@ -1,0 +1,10 @@
+// Font
+
+@mixin font-size($size: 1) {
+	@if $site-enable-ie {
+		font-size: ($size * $site-font-size-root) * 1px;
+		font-size: $size * 1rem;
+	} @else {
+		font-size: $size * 1rem;
+	}
+}

@@ -1,0 +1,23 @@
+// /**
+//  * 0.0 - Main Section
+//  *
+//  * Main section.
+//  */
+
+.#{$site-prefix}l-main {
+	&__widgets {
+		// .#{$site-prefix}p-widget {
+		// 	&__title {
+		// 		color: $site-dark-contrast-active-color;
+		// 	}
+		// }
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.#{$site-prefix}l-main {
+		> .#{$site-prefix}c-card {
+			@include rem(margin-bottom, 1rem);
+		}
+	}
+}

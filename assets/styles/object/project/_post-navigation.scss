@@ -1,0 +1,32 @@
+// Post Navigation
+
+.#{$site-prefix}p-post-nav {
+	@include media-breakpoint-down(sm) {
+		.#{$site-prefix}c-card {
+			margin-bottom: 0;
+		}
+	}
+
+	@include rem(margin-bottom, $site-spacer-y);
+	@include media-breakpoint-up(md) {
+		@include rem(margin-bottom, map-get(map-get($site-spacers, 3), y));
+	}
+	// &__links {}
+	// &__title {}
+	&__text {
+		@extend .#{$site-prefix}p-entry-list__content;
+	}
+	// &__previous {}
+	// &__next {}
+}
+
+// .post-navigation {
+// 	a {
+// 		  @include hover-focus {
+// 			    text-decoration: none;
+// 		  }
+// 	}
+// 	.nav-links {}
+// 	.nav-previous {}
+// 	.nav-next {}
+// }

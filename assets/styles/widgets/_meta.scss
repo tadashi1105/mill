@@ -1,0 +1,21 @@
+// /**
+//  * 0.0 - Widget Meta
+//  *
+//  * Widget meta.
+//  */
+
+.widget_meta {
+	> ul {
+		// @extend .#{$site-prefix}c-nav;
+		@include list-unstyled();
+		@extend .#{$site-prefix}u-clearfix;
+	}
+}
+
+// .widget_meta {
+// 	ul {
+// 		li {
+// 			a {}
+// 		}
+// 	}
+// }

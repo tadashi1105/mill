@@ -1,0 +1,108 @@
+// /**
+//  * 0.0 - Entry Style
+//  *
+//  * Entry content typography.
+//  */
+
+.#{$site-prefix}p-content-style .entry-content {
+	@include overflow-wrap();
+
+	@include media-breakpoint-down(sm) {
+		h2 {
+			@include rem(font-size, $site-font-size-h3);
+		}
+
+		h3 {
+			@include rem(font-size, $site-font-size-h4);
+		}
+
+		h4 {
+			@include rem(font-size, $site-font-size-h5);
+		}
+	}
+
+	> h2 {
+		@include rem(margin-top, 3.5rem);
+		@include rem(padding-bottom, .5rem);
+		border-bottom: 3px solid $site-brand-primary;
+	}
+
+	> h3,
+	> h4,
+	> h5,
+	> h6 {
+		@include rem(margin-top, 3rem);
+		@include rem(padding, .25rem .5rem);
+		border-left: 3px solid $site-brand-primary;
+	}
+
+	> aside,
+	> div {
+		@include rem(margin-bottom, 1rem);
+	}
+
+	blockquote {
+		@extend .#{$site-prefix}c-blockquote;
+		footer {
+			@extend .#{$site-prefix}c-blockquote__footer;
+		}
+	}
+
+	pre {
+		@include rem(padding, $site-pre-spacer);
+		// word-break: break-all;
+		// word-wrap: break-word;
+		background-color: $site-pre-bg;
+		border: 1px solid $site-pre-border-color;
+		border-radius: $site-pre-border-radius;
+	}
+
+	table {
+		@extend .#{$site-prefix}c-table;
+		// @extend .#{$site-prefix}c-table--hover;
+		@extend .#{$site-prefix}c-table--bordered;
+	}
+
+	thead {
+		@extend .#{$site-prefix}c-thead--default;
+	}
+
+	aside {
+		@include rem(padding, $site-spacer-x);
+		border: 1px solid $site-gray-lightest;
+		@include border-radius($site-border-radius);
+
+		> h2,
+		> .h2,
+		> h3,
+		> .h3,
+		> h4,
+		> .h4,
+		> h5,
+		> .h5,
+		> h6,
+		> .h6 {
+			@include rem(padding, .25rem .5rem);
+			border-left: 3px solid $site-brand-primary;
+
+			&:first-child {
+				margin-top: 0;
+				padding: 0;
+				@include rem(padding-bottom, .5rem);
+				border-left: 0;
+				border-bottom: 1px solid $site-gray-lightest;
+			}
+		}
+
+		p,
+		dl,
+		ul,
+		ol {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	// .post-password-form {}
+}

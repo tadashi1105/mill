@@ -1,0 +1,12 @@
+// .customize-support .#{$site-prefix}c-drawer {
+// 	top: 46px;
+// 	@include media-breakpoint-up(md) {
+// 		top: 32px;
+// 	}
+// }
+img[width="1"][height="1"] {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}

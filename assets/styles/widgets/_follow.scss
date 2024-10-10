@@ -1,0 +1,103 @@
+.#{$site-prefix}p-fb-follow {
+	$this: &;
+
+	position: relative;
+	display: block;
+	min-height: 208px;
+
+	&__block {
+		display: table;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__thumbnail {
+		display: table-cell;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-color: $site-brand-primary;
+		height: 208px;
+		width: 100%;
+		@include border-radius($site-border-radius);
+
+		@include media-breakpoint-up(md) {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+	}
+
+	&__actions {
+		display: table;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.6);
+		padding: 1rem;
+		min-height: 208px;
+		@include border-radius($site-border-radius);
+
+		@include media-breakpoint-up(md) {
+			position: static;
+			width: 208px;
+			background-color: $site-gray-darkest;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+	}
+
+	&__like {
+		display: table-cell;
+		color: #fff;
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	&__text {
+		font-size: $site-font-size-sm;
+		font-weight: normal;
+		margin-top: 1rem;
+		margin-bottom: 0;
+	}
+}
+
+// .#{$prefix}tw-follow {
+// 	$this: &;
+//
+//
+// 	&__block {
+// 	}
+//
+// 	&__thumbnail {
+// 	}
+//
+// 	&__actions {
+// 	}
+//
+// 	&__like {
+// 	}
+//
+// 	&__text {
+// 	}
+// }
+//
+// .#{$prefix}line-follow {
+// 	$this: &;
+//
+// 	&__block {
+// 	}
+//
+// 	&__thumbnail {
+// 	}
+//
+// 	&__actions {
+// 	}
+//
+// 	&__like {
+// 	}
+//
+// 	&__text {
+// 	}
+// }

@@ -1,0 +1,42 @@
+// /**
+//  * 0.0 - Widget Categories
+//  *
+//  * Widget categories.
+//  */
+
+.widget_categories {
+	> ul {
+		// @extend .#{$site-prefix}c-nav;
+		@include list-unstyled();
+		@extend .#{$site-prefix}u-clearfix;
+	}
+}
+
+// .widget_categories {
+// 	ul {
+// 		li {
+// 			&.cat-item {}
+// 			&.cat-item-(id) {}
+// 			a {}
+// 			ul.children {
+// 				li {
+// 					&.cat-item {}
+// 					&.cat-item-(id) {}
+// 					a {}
+// 				}
+// 			}
+// 		}
+// 	}
+//
+// 	label.screen-reader-text {}
+// 	select{
+// 		&#cat {}
+// 		&.postform {}
+// 		option {
+// 			&.level-0 {}
+// 			&.level-1 {}
+// 			&.level-2 {}
+// 			&.level-3 {}
+// 		}
+// 	}
+// }

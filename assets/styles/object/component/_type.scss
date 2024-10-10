@@ -1,0 +1,341 @@
+//
+// Headings
+//
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	@include rem(margin-bottom, $site-headings-margin-bottom);
+	font-family: $site-headings-font-family;
+	font-weight: $site-headings-font-weight;
+	line-height: $site-headings-line-height;
+	color: $site-headings-color;
+}
+
+h1 {
+	@include rem(font-size, $site-font-size-h1);
+}
+
+h2 {
+	@include rem(font-size, $site-font-size-h2);
+}
+
+h3 {
+	@include rem(font-size, $site-font-size-h3);
+}
+
+h4 {
+	@include rem(font-size, $site-font-size-h4);
+}
+
+h5 {
+	@include rem(font-size, $site-font-size-h5);
+}
+
+h6 {
+	@include rem(font-size, $site-font-size-h6);
+}
+
+
+// These declarations are kept separate from and placed after
+// the previous tag-based declarations so that the classes beat the tags in
+// the CSS cascade, and thus <h1 class="h2"> will be styled like an h2.
+.h1 {
+	@include rem(font-size, $site-font-size-h1);
+}
+
+.h2 {
+	@include rem(font-size, $site-font-size-h2);
+}
+
+.h3 {
+	@include rem(font-size, $site-font-size-h3);
+}
+
+.h4 {
+	@include rem(font-size, $site-font-size-h4);
+}
+
+.h5 {
+	@include rem(font-size, $site-font-size-h5);
+}
+
+.h6 {
+	@include rem(font-size, $site-font-size-h6);
+}
+
+// .lead {
+// 	font-size: $site-lead-font-size;
+// 	font-weight: $site-lead-font-weight;
+// }
+
+// Type display classes
+// .display-1 {
+// 	font-size: $site-display1-size;
+// 	font-weight: $site-display1-weight;
+// }
+// .display-2 {
+// 	font-size: $site-display2-size;
+// 	font-weight: $site-display2-weight;
+// }
+// .display-3 {
+// 	font-size: $site-display3-size;
+// 	font-weight: $site-display3-weight;
+// }
+// .display-4 {
+// 	font-size: $site-display4-size;
+// 	font-weight: $site-display4-weight;
+// }
+
+
+//
+// Horizontal rules
+//
+
+hr {
+	@include rem(margin-top, $site-spacer-y);
+	@include rem(margin-bottom, $site-spacer-y);
+	border: 0;
+	border-top: $site-hr-border-width solid $site-hr-border-color;
+}
+
+
+//
+// Emphasis
+//
+
+small,
+.small {
+	font-size: 80%;
+	font-weight: normal;
+}
+
+mark,
+.mark {
+	padding: .2em;
+	background-color: $site-state-warning-bg;
+}
+
+
+//
+// Misc
+//
+
+// Builds on `abbr`
+// .initialism {
+//   font-size: 90%;
+//   text-transform: uppercase;
+// }
+
+// Blockquotes
+.#{$site-prefix}c-blockquote {
+	@include rem(padding, ($site-spacer / 2) $site-spacer);
+	@include rem(margin-bottom, $site-spacer);
+	@include rem(font-size, $site-blockquote-font-size);
+	border-left: 3px solid $site-blockquote-border-color;
+}
+
+.#{$site-prefix}c-blockquote__footer {
+	display: block;
+	font-size: 80%; // back to default font-size
+	line-height: $site-line-height;
+	color: $site-blockquote-small-color;
+
+	&::before {
+		content: "\2014 \00A0"; // em dash, nbsp
+	}
+}
+
+
+// html {
+//   font-size: $font-size-root * .875;
+// }
+
+// @include media-breakpoint-up(sm) {
+//   html {
+//     font-size: 16px;
+//   }
+// }
+
+// @include media-breakpoint-up(md) {
+//   html {
+//     font-size: $font-size-root;
+//   }
+// }
+
+// @include media-breakpoint-up(lg) {
+//   html {
+//     font-size: 28px;
+//   }
+// }
+
+// .display-4 {
+//   // Light
+//   font-weight: 300;
+//   font-size: 112px;
+//   // Line height
+//   // Color & contrast
+//   color: rgba(0, 0, 0, 0.54);
+// }
+//
+// .display-3 {
+//   // Regular
+//   font-weight: normal;
+//   font-size: 56px;
+//   // Line height
+//   // Color & contrast
+//   color: rgba(0, 0, 0, 0.54);
+// }
+//
+// .display-2 {
+//   // Regular
+//   font-weight: normal;
+//   font-size: 45px;
+//   // Line height
+//   // Type
+//   line-height: 45px;
+//   // Leading
+//   line-height: 63pt;
+//   // Color & contrast
+//   color: rgba(0, 0, 0, 0.54);
+// }
+//
+// .display-1 {
+//   // Regular
+//   font-weight: normal;
+//   font-size: 34px;
+//   // Line height
+//   // Type
+//   line-height: 34px;
+//   // Leading
+//   line-height: 48pt;
+//   // Color & contrast
+//   color: rgba(0, 0, 0, 0.54);
+// }
+//
+// .headline {
+//   // Regular
+//   font-weight: normal;
+//   font-size: 24px;
+//   // Line height
+//   // Type
+//   line-height: 24px;
+//   // Leading
+//   line-height: 34pt;
+//   // Color & contrast
+//   color: rgba(0, 0, 0, 0.87);
+// }
+//
+// .title {
+//   // Medium
+//   font-weight: 500;
+//   font-size: 21px;
+//   // Line height
+//   // Color & contrast
+//   color: rgba(0, 0, 0, 0.87);
+// }
+//
+// .subheading {
+//   // Regular
+//   font-weight: normal;
+//   font-weight: 500;
+//   font-size: 17px; // Device
+//   font-size: 16px; // Desktop
+//   // Line height
+//   // 1
+//   // Type
+//   line-height: 16px;
+//   line-height: 17px;
+//   // Leading
+//   line-height: 30pt;
+//   // 2
+//   // Type
+//   line-height: 16px;
+//   line-height: 17px;
+//   // Leading
+//   line-height: 26pt;
+//   // Color & contrast
+//   color: rgba(0, 0, 0, 0.87);
+// }
+//
+// .body-2 {
+//   // Medium
+//   font-weight: 500;
+//   font-size: 15px; // Device
+//   font-size: 14px; // Desktop
+//   // Line height
+//   // Type
+//   line-height: 14px;
+//   line-height: 15px;
+//   // Leading
+//   line-height: 26pt;
+//   // Color & contrast
+//   color: rgba(0, 0, 0, 0.87);
+// }
+//
+// .body-1 {
+//   // Regular
+//   font-weight: normal;
+//   font-size: 15px; // Device
+//   font-size: 14px; // Desktop
+//   // Line height
+//   // Type
+//   line-height: 14px;
+//   line-height: 15px;
+//   // Leading
+//   line-height: 23pt;
+//   // Color & contrast
+//   color: rgba(0, 0, 0, 0.87);
+// }
+//
+// .caption {
+//   // Regular
+//   font-weight: normal;
+//   font-size: 13px;
+//   // Line height
+//   // Color & contrast
+//   color: rgba(0, 0, 0, 0.54);
+// }
+//
+// .menu {
+//   // Color & contrast
+//   color: rgba(0, 0, 0, 0.87);
+// }
+//
+// .button {
+//   // Medium
+//   font-weight: 500;
+//   font-size: 15px;
+//   // Line height
+//   // Color & contrast
+//   color: rgba(0, 0, 0, 0.87);
+// }
+
+
+// .cjk-font-weights {
+// Thin
+// Light
+// DemiLight
+// Regular
+// Medium
+// Bold
+// Black
+// }
+// 100    Extra Light or Ultra Light
+// 200    Light or Thin
+// 300    Book or Demi
+// 400    Normal or Regular
+// 500    Medium
+// 600    Semibold, Demibold
+// 700    Bold
+// 800    Black, Extra Bold or Heavy
+// 900    Extra Black, Fat, Poster or Ultra Black
+//
+// 100 - Thin
+// 200 - Extra Light (Ultra Light)
+// 300 - Light
+// 400 - Normal
+// 500 - Medium
+// 600 - Semi Bold (Demi Bold)
+// 700 - Bold
+// 800 - Extra Bold (Ultra Bold)
+// 900 - Black (Heavy)

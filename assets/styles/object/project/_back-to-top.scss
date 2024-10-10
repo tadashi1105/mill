@@ -1,0 +1,32 @@
+// /**
+//  * 0.0 - Back To Top
+//  *
+//  * Back to top of page.
+//  */
+
+.#{$site-prefix}p-back-to-top {
+	$this: &;
+
+	display: block;
+	text-align: center;
+	@include rem(padding, $site-back-to-top-padding);
+	// color: $site-back-to-top-link-color;
+	// background-color: $site-back-to-top-bg-color;
+	// border-top: 1px solid $site-gray;
+
+	@include hover-focus {
+		// color: $site-back-to-top-link-hover-color;
+		text-decoration: none;
+	}
+
+	&__icon {
+		display: block;
+		@include rem(font-size, $site-font-size-lg);
+		@include rem(margin-bottom, .25rem);
+	}
+
+	&__text {
+		display: block;
+		@include rem(font-size, $site-font-size-xs);
+	}
+}

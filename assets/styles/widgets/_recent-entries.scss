@@ -1,0 +1,18 @@
+// /**
+//  * 0.0 - Widget Recent Entries
+//  *
+//  * Widget recent entries.
+//  */
+
+.widget_recent_entries {
+	@extend .widget_recent_comments;
+}
+
+// .widget_recent_entries {
+// 	ul {
+// 		li {
+// 			a {}
+// 			span.post-date {}
+// 		}
+// 	}
+// }

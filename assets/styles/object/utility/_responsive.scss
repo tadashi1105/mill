@@ -1,0 +1,54 @@
+//
+// Responsive utilities
+//
+
+@each $bp in map-keys($site-grid-breakpoints) {
+	.#{$site-prefix}u-hidden-#{$bp}-up {
+		@include media-breakpoint-up($bp) {
+			display: none !important;
+		}
+	}
+
+	.#{$site-prefix}u-hidden-#{$bp}-down {
+		@include media-breakpoint-down($bp) {
+			display: none !important;
+		}
+	}
+}
+
+
+// Print utilities
+//
+// Media queries are placed on the inside to be mixin-friendly.
+
+// .#{$site-prefix}u-visible-print {
+// 	&-block {
+// 		display: none !important;
+//
+// 		@media print {
+// 			display: block !important;
+// 		}
+// 	}
+//
+// 	&-inline {
+// 		display: none !important;
+//
+// 		@media print {
+// 			display: inline !important;
+// 		}
+// 	}
+//
+// 	&-inline-block {
+// 		display: none !important;
+//
+// 		@media print {
+// 			display: inline-block !important;
+// 		}
+// 	}
+// }
+
+// .#{$site-prefix}u-hidden-print {
+// 	@media print {
+// 		display: none !important;
+// 	}
+// }

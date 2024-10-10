@@ -1,0 +1,42 @@
+// /**
+//  * 0.0 - Footer Section
+//  *
+//  * Footer section.
+//  */
+
+.#{$site-prefix}l-footer {
+	$this: &;
+
+	&__widgets {
+		@include rem(padding-top, map-get(map-get($site-spacers, 2), y));
+		@include rem(padding-bottom, ($site-spacer-x / 2));
+		border-top: 3px solid $site-brand-primary;
+		border-bottom: 1px solid $site-gray-lightest;
+		background-color: $site-white;
+		color: $site-light-contrast-color;
+
+		a {
+			color: $site-light-contrast-color;
+			@include hover-focus {
+				color: $site-light-contrast-hover-color;
+			}
+		}
+
+		.#{$site-prefix}p-widget__title {
+			color: $site-light-contrast-active-color;
+		}
+	}
+
+	.#{$site-prefix}p-back-to-top {
+		background-color: $site-white;
+		color: $site-light-contrast-color;
+
+		@include hover-focus {
+			color: $site-light-contrast-hover-color;
+		}
+	}
+
+	.#{$site-prefix}p-colophon {
+		background-color: $site-gray-darkest;
+	}
+}

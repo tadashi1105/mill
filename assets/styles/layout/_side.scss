@@ -1,0 +1,41 @@
+// /**
+//  * 0.0 - Side Section
+//  *
+//  * Side section.
+//  */
+
+.#{$site-prefix}l-side {
+	&__widgets {
+		.#{$site-prefix}p-widget {
+			// &__title {
+			// 	color: $site-dark-contrast-active-color;
+			// }
+
+			@include media-breakpoint-up(lg) {
+				max-width: 336px;
+			}
+		}
+	}
+}
+
+// .#{$site-prefix}l-left-side {
+// 	&__widgets {}
+// }
+//
+// .#{$site-prefix}l-right-side {
+// 	&__widgets {}
+// }
+
+// @include media-breakpoint-down(sm) {
+// 	.#{$site-prefix}l-side {
+// 		&__widgets {}
+// 	}
+//
+// 	.#{$site-prefix}l-left-side {
+// 		&__widgets {}
+// 	}
+//
+// 	.#{$site-prefix}l-right-side {
+// 		&__widgets {}
+// 	}
+// }

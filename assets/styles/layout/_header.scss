@@ -1,0 +1,111 @@
+// /**
+//  * 0.0 - Header Section
+//  *
+//  * Header section.
+//  */
+
+.#{$site-prefix}l-header {
+	@include media-breakpoint-up(md) {
+		@include rem(margin-bottom, map-get(map-get($site-spacers, 3), y));
+	}
+
+	&__navbar {
+		// border-bottom: 1px solid $site-gray-lightest;
+		// background-color: $site-brand-primary;
+		background-color: $site-white;
+		color: $site-light-contrast-color;
+
+		// .#{$site-prefix}c-toolbar__btn,
+		.#{$site-prefix}c-toolbar__brand,
+		.#{$site-prefix}c-toolbar__brand-link {
+			// color: $site-dark-contrast-active-color;
+			color: $site-light-contrast-active-color;
+			// color: $site-brand-primary;
+
+			@include hover-focus {
+				// color: $site-dark-contrast-hover-color;
+				color: $site-light-contrast-hover-color;
+				// color: darken($site-brand-primary, 10%);
+				// color: rgba($site-brand-primary, .4);
+			}
+		}
+
+		.#{$site-prefix}c-toolbar__btn {
+			// color: $site-dark-contrast-active-color;
+			// color: $site-light-contrast-active-color;
+			color: $site-brand-primary;
+
+			@include hover-focus {
+				// color: $site-light-contrast-hover-color;
+				color: rgba($site-brand-primary, .4);
+			}
+		}
+
+	}
+
+	&__main-nav {
+		border-bottom: 1px solid $site-gray-lightest;
+		background-color: $site-white;
+		// background-color: $site-gray-lightest;
+		// background-color: $site-brand-primary;
+		color: $site-light-contrast-color;
+
+		.menu-item > a {
+			color: $site-light-contrast-color;
+			// color: $site-dark-contrast-color;
+			@include hover-focus {
+				color: $site-light-contrast-hover-color;
+				// color: $site-dark-contrast-hover-color;
+				// border-bottom-color: $site-brand-primary;
+			}
+		}
+
+		.current-menu-item > a {
+			@include plain-hover-focus {
+				color: $site-light-contrast-active-color;
+				border-bottom-color: $site-brand-primary;
+			}
+		}
+	}
+
+	.#{$site-prefix}p-breadcrumb {
+		// background-color: $site-gray-dark;
+		color: $site-light-contrast-color;
+
+		a {
+			color: $site-light-contrast-color;
+			@include hover-focus {
+				color: $site-light-contrast-hover-color;
+			}
+		}
+	}
+
+	.#{$site-prefix}p-page-header {
+		// background-color: $site-gray;
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.#{$site-prefix}l-header {
+
+		// &__navbar {}
+
+		&__main-nav {
+			.#{$site-prefix}c-nav {
+				$this: &;
+				&--tabs {
+					.menu-item > a,
+					#{$this}__link {
+						@include rem(font-size, $site-font-size-xs);
+						@include rem(padding, 8px 16px 6px);
+						font-weight: 100;
+					}
+				}
+			}
+		}
+
+		// .#{$site-prefix}p-breadcrumb {}
+
+		// .#{$site-prefix}p-page-header {}
+	}
+}

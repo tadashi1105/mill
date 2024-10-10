@@ -1,0 +1,14 @@
+// /**
+//  * 0.0 - Widget Social
+//  *
+//  * Widget social.
+//  */
+
+.mill_widget_social_subscription {}
+
+.#{$site-prefix}p-social-subscription {
+	.#{$site-prefix}c-btn {
+		float: left;
+		width: 25%;
+	}
+}

@@ -1,0 +1,24 @@
+// /**
+//  * 0.0 - Widget Ad
+//  *
+//  * Widget ad.
+//  */
+
+.mill_widget_ad {
+	background-color: transparent;
+	// overflow: hidden;
+
+	div {
+		+ .#{$site-prefix}p-ad {
+			.#{$site-prefix}p-ad__item {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.#{$site-prefix}p-ad:not(:last-child) {
+		.#{$site-prefix}p-ad__item {
+			margin-bottom: 0;
+		}
+	}
+}

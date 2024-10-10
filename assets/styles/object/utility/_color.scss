@@ -1,0 +1,125 @@
+//
+// Contextual colors
+//
+
+.#{$site-prefix}u-text-muted {
+	color: $site-text-muted;
+}
+
+.gray1 {
+	color: $site-gray-darkest !important;
+	background: #fff;
+}
+.gray2 {
+	color: $site-gray-darker !important;
+	background: #fff;
+}
+.gray3 {
+	color: $site-gray-dark !important;
+	background: #fff;
+}
+.gray4 {
+	color: $site-gray !important;
+	background: #fff;
+}
+.gray5 {
+	color: $site-gray-light !important;
+	background: #fff;
+}
+.gray6 {
+	color: $site-gray-lighter !important;
+	background: #fff;
+}
+.gray7 {
+	color: $site-gray-lightest !important;
+	background: #fff;
+}
+.d1 {
+	color: $site-dark-contrast-color !important;
+	background: #000;
+}
+.d2 {
+	color: $site-dark-contrast-hover-color !important;
+	background: #000;
+}
+.d3 {
+	color: $site-dark-contrast-active-color !important;
+	background: #000;
+}
+.d4 {
+	color: $site-dark-contrast-disabled-color !important;
+	background: #000;
+}
+.l1 {
+	color: $site-light-contrast-color !important;
+	background: #fff;
+}
+.l2 {
+	color: $site-light-contrast-hover-color !important;
+	background: #fff;
+}
+.l3 {
+	color: $site-light-contrast-active-color !important;
+	background: #fff;
+}
+.l4 {
+	color: $site-light-contrast-disabled-color !important;
+	background: #fff;
+}
+
+@include text-emphasis-variant('.#{$site-prefix}u-text-primary', $site-brand-primary);
+
+@include text-emphasis-variant('.#{$site-prefix}u-text-success', $site-brand-success);
+
+@include text-emphasis-variant('.#{$site-prefix}u-text-info', $site-brand-info);
+
+@include text-emphasis-variant('.#{$site-prefix}u-text-warning', $site-brand-warning);
+
+@include text-emphasis-variant('.#{$site-prefix}u-text-danger', $site-brand-danger);
+
+
+// Social - Text color
+
+@include text-emphasis-variant('.#{$site-prefix}u-text-twitter', #55acee);
+@include text-emphasis-variant('.#{$site-prefix}u-text-facebook', #3b5998);
+@include text-emphasis-variant('.#{$site-prefix}u-text-hatena', #008fde);
+@include text-emphasis-variant('.#{$site-prefix}u-text-line', #00c300);
+@include text-emphasis-variant('.#{$site-prefix}u-text-google-plus', #db4437);
+@include text-emphasis-variant('.#{$site-prefix}u-text-youtube', #cd201f);
+@include text-emphasis-variant('.#{$site-prefix}u-text-pocket', #ed4055);
+@include text-emphasis-variant('.#{$site-prefix}u-text-feedly', #3ad049);
+@include text-emphasis-variant('.#{$site-prefix}u-text-rss', #ff8238);
+@include text-emphasis-variant('.#{$site-prefix}u-text-mail', $site-brand-primary);
+@include text-emphasis-variant('.#{$site-prefix}u-text-push7', #eeac00);
+@include text-emphasis-variant('.#{$site-prefix}u-text-soundcloud', #f50);
+
+
+//
+// Contextual backgrounds
+//
+
+@include bg-variant('.#{$site-prefix}u-bg-primary', $site-brand-primary);
+
+@include bg-variant('.#{$site-prefix}u-bg-success', $site-brand-success);
+
+@include bg-variant('.#{$site-prefix}u-bg-info', $site-brand-info);
+
+@include bg-variant('.#{$site-prefix}u-bg-warning', $site-brand-warning);
+
+@include bg-variant('.#{$site-prefix}u-bg-danger', $site-brand-danger);
+
+
+// Social - Background color
+
+@include bg-variant('.#{$site-prefix}u-bg-twitter', #55acee);
+@include bg-variant('.#{$site-prefix}u-bg-facebook', #3b5998);
+@include bg-variant('.#{$site-prefix}u-bg-hatena', #008fde);
+@include bg-variant('.#{$site-prefix}u-bg-line', #00c300);
+@include bg-variant('.#{$site-prefix}u-bg-google-plus', #db4437);
+@include bg-variant('.#{$site-prefix}u-bg-youtube', #cd201f);
+@include bg-variant('.#{$site-prefix}u-bg-pocket', #ed4055);
+@include bg-variant('.#{$site-prefix}u-bg-feedly', #3ad049);
+@include bg-variant('.#{$site-prefix}u-bg-rss', #ff8238);
+@include bg-variant('.#{$site-prefix}u-bg-mail', $site-brand-primary);
+@include bg-variant('.#{$site-prefix}u-bg-push7', #eeac00);
+@include bg-variant('.#{$site-prefix}u-bg-soundcloud', #f50);

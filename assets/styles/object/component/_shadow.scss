@@ -1,0 +1,35 @@
+// /**
+//  * 0.0 - Shadows
+//  *
+//  * Shadows.
+//  */
+
+.#{$site-prefix}c-shadow {
+	&--2dp{
+		@include shadow-2dp();
+	}
+
+	&--3dp{
+		@include shadow-3dp();
+	}
+
+	&--4dp{
+		@include shadow-4dp();
+	}
+
+	&--6dp{
+		@include shadow-6dp();
+	}
+
+	&--8dp{
+		@include shadow-8dp();
+	}
+
+	&--16dp{
+		@include shadow-16dp();
+	}
+
+	&--24dp{
+		@include shadow-24dp();
+	}
+}

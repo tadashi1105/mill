@@ -1,0 +1,32 @@
+.mill-col.col-sm-12.col-md-8
+  main.mill-main(
+    id='main',
+    role='main',
+  )
+    .mill-main__header
+      +card
+
+    .mill-main__section
+      if page == 'index'
+        include ./_content.pug
+      if page == 'single'
+        include ./_content-single.pug
+
+    .mill-main__footer
+      if page == 'index'
+        +pagination
+      if page == 'single'
+        +post-navigation
+        .mill-main__widget-section(
+          class=[
+            'widget-area',
+          ]
+        )
+          .mill-related-post-widget
+            .mill-row.row
+                - for (var x = 0; x < 6; x++)
+                  .mill-col.col-sm-6
+                    +entry-card--small
+          +card
+            +author-box
+          +widget

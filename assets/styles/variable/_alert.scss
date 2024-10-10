@@ -1,0 +1,24 @@
+// Alerts
+//
+// Define alert colors, border radius, and padding.
+
+$site-alert-padding:               $site-spacer !default;
+$site-alert-border-radius:         $site-border-radius !default;
+$site-alert-link-font-weight:      bold !default;
+$site-alert-border-width:          $site-border-width !default;
+
+$site-alert-success-bg:            $site-state-success-bg !default;
+$site-alert-success-text:          $site-state-success-text !default;
+$site-alert-success-border:        $site-state-success-border !default;
+
+$site-alert-info-bg:               $site-state-info-bg !default;
+$site-alert-info-text:             $site-state-info-text !default;
+$site-alert-info-border:           $site-state-info-border !default;
+
+$site-alert-warning-bg:            $site-state-warning-bg !default;
+$site-alert-warning-text:          $site-state-warning-text !default;
+$site-alert-warning-border:        $site-state-warning-border !default;
+
+$site-alert-danger-bg:             $site-state-danger-bg !default;
+$site-alert-danger-text:           $site-state-danger-text !default;
+$site-alert-danger-border:         $site-state-danger-border !default;

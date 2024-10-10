@@ -1,0 +1,106 @@
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+
+.#{$site-prefix}c-container {
+	@include make-container();
+	@include make-container-max-widths();
+	// @include media-breakpoint-up(md) {
+	// 	@include make-container($site-grid-gutter-width-md);
+	// }
+}
+
+
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but without any defined
+// width for fluid, full width layouts.
+
+.#{$site-prefix}c-container-fluid {
+	@include make-container();
+	// @include media-breakpoint-up(md) {
+	// 	@include make-container($site-grid-gutter-width-md);
+	// }
+}
+
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+
+@if $site-enable-grid-classes {
+	.#{$site-prefix}c-row {
+		@include make-row();
+
+		// @include media-breakpoint-up(md) {
+		// 	@include make-row($site-grid-gutter-width-md);
+		// }
+	}
+
+
+	// .#{$site-prefix}c-row--xs {
+	// 	@include make-row(2px);
+	// 	[class^="#{$site-prefix}c-col-"],
+	// 	[class*=" #{$site-prefix}c-col-"] {
+	// 		@include make-col(2px);
+	// 	}
+	// }
+
+	.#{$site-prefix}c-row--sm {
+		@include make-row(8px);
+		[class^="#{$site-prefix}c-col-"],
+		[class*=" #{$site-prefix}c-col-"] {
+			@include make-col(8px);
+		}
+	}
+
+	// .#{$site-prefix}c-row--lg {
+	// 	// @include make-row();
+	// }
+}
+
+
+// Columns
+//
+// Common styles for small and large grid columns
+
+@if $site-enable-grid-classes {
+	@include make-grid-columns();
+}
+
+
+// Flex variation
+//
+// Custom styles for additional flex alignment options.
+
+@if $site-enable-flex and $site-enable-grid-classes {
+
+	// Flex column reordering
+
+	@each $breakpoint in map-keys($site-grid-breakpoints) {
+		@include media-breakpoint-up($breakpoint) {
+			.#{$site-prefix}c-col-#{$breakpoint}-first { order: -1; }
+			.#{$site-prefix}c-col-#{$breakpoint}-last  { order: 1; }
+		}
+	}
+
+	// Alignment for every column in row
+
+	@each $breakpoint in map-keys($site-grid-breakpoints) {
+		@include media-breakpoint-up($breakpoint) {
+			.#{$site-prefix}c-row-#{$breakpoint}-top    { align-items: flex-start; }
+			.#{$site-prefix}c-row-#{$breakpoint}-center { align-items: center; }
+			.#{$site-prefix}c-row-#{$breakpoint}-bottom { align-items: flex-end; }
+		}
+	}
+
+	// Alignment per column
+
+	@each $breakpoint in map-keys($site-grid-breakpoints) {
+		@include media-breakpoint-up($breakpoint) {
+			.#{$site-prefix}c-col-#{$breakpoint}-top    { align-self: flex-start; }
+			.#{$site-prefix}c-col-#{$breakpoint}-center { align-self: center; }
+			.#{$site-prefix}c-col-#{$breakpoint}-bottom { align-self: flex-end; }
+		}
+	}
+}

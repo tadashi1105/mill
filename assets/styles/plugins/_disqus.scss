@@ -1,0 +1,6 @@
+#disqus_thread {
+	position: relative;
+	margin-bottom: 3rem;
+	background-color: $site-card-bg;
+	@include rem(padding, $site-card-spacer-x);
+}

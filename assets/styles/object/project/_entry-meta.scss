@@ -1,0 +1,39 @@
+// /**
+//  * 0.0 - Entry meta
+//  *
+//  * Entry meta.
+//  */
+
+.entry-meta {}
+// .sticky-post {}
+// .entry-format {}
+// .posted-on {}
+// .byline {}
+// .author.vcard {}
+// .cat-links {}
+.cat-links__list {
+	a {
+		+ a {
+			display: none;
+			@include media-breakpoint-up(md) {
+				display: inline;
+			}
+		}
+
+		&:not(:last-child)::after {
+			@include media-breakpoint-up(md) {
+				content: ", ";
+			}
+		}
+	}
+}
+// .tags-links {}
+.tags-links__list {
+	@extend .cat-links__list;
+}
+// .full-size-link {}
+// .comments-link {}
+// .edit-link {}
+.updated:not(.published) {
+	display: none;
+}

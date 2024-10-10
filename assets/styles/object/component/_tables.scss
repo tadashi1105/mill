@@ -1,0 +1,174 @@
+//
+// Basic Bootstrap table
+//
+
+.#{$site-prefix}c-table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: $site-spacer;
+
+	th,
+	td {
+		padding: $site-table-cell-padding;
+		line-height: $site-line-height;
+		vertical-align: top;
+		border-top: $site-table-border-width solid $site-table-border-color;
+	}
+
+	thead th {
+		vertical-align: bottom;
+		border-bottom: (2 * $site-table-border-width) solid $site-table-border-color;
+	}
+
+	tbody + tbody {
+		border-top: (2 * $site-table-border-width) solid $site-table-border-color;
+	}
+
+	.table {
+		background-color: $site-bg-color;
+	}
+}
+
+
+//
+// Condensed table w/ half padding
+//
+
+// .#{$site-prefix}c-table--sm {
+// 	th,
+// 	td {
+// 		padding: $site-table-sm-cell-padding;
+// 	}
+// }
+
+
+// Bordered version
+//
+// Add borders all around the table and between all the columns.
+
+.#{$site-prefix}c-table--bordered {
+	border: $site-table-border-width solid $site-table-border-color;
+
+	th,
+	td {
+		border: $site-table-border-width solid $site-table-border-color;
+	}
+
+	thead {
+		th,
+		td {
+			border-bottom-width: (2 * $site-table-border-width);
+		}
+	}
+}
+
+
+// Zebra-striping
+//
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+
+// .#{$site-prefix}c-table--striped {
+// 	tbody tr:nth-of-type(odd) {
+// 		background-color: $site-table-bg-accent;
+// 	}
+// }
+
+
+// Hover effect
+//
+// Placed here since it has to come after the potential zebra striping
+
+.#{$site-prefix}c-table--hover {
+	tbody tr {
+		@include hover {
+			background-color: $site-table-bg-hover;
+		}
+	}
+}
+
+
+// Table backgrounds
+//
+// Exact selectors below required to override `.table-striped` and prevent
+// inheritance to nested tables.
+
+// Generate the contextual variants
+// @include table-row-variant(active, $site-table-bg-active);
+// @include table-row-variant(success, $site-state-success-bg);
+// @include table-row-variant(info, $site-state-info-bg);
+// @include table-row-variant(warning, $site-state-warning-bg);
+// @include table-row-variant(danger, $site-state-danger-bg);
+
+
+// .#{$site-prefix}c-thead--inverse {
+// 	th {
+// 		color: #fff;
+// 		background-color: $site-gray-dark;
+// 	}
+// }
+.#{$site-prefix}c-thead--default {
+	th {
+		color: $site-gray-darkest;
+		background-color: $site-gray-lighter;
+	}
+}
+
+// .#{$site-prefix}c-table--inverse {
+// 	color: $site-gray-lighter;
+// 	background-color: $site-gray-dark;
+//
+// 	&.#{$site-prefix}c-table-bordered {
+// 		border: 0;
+// 	}
+//
+// 	th,
+// 	td,
+// 	thead th {
+// 		border-color: $site-gray;
+// 	}
+// }
+
+
+// .#{$site-prefix}c-table-reflow {
+// 	thead {
+// 		float: left;
+// 	}
+//
+// 	tbody {
+// 		display: block;
+// 		white-space: nowrap;
+// 	}
+//
+// 	th,
+// 	td {
+// 		border-top: $site-table-border-width solid $site-table-border-color;
+// 		border-left: $site-table-border-width solid $site-table-border-color;
+//
+// 		&:last-child {
+// 			border-right: $site-table-border-width solid $site-table-border-color;
+// 		}
+// 	}
+//
+// 	thead,
+// 	tbody,
+// 	tfoot {
+// 		&:last-child {
+// 			tr:last-child {
+// 				th,
+// 				td {
+// 					border-bottom: $site-table-border-width solid $site-table-border-color;
+// 				}
+// 			}
+// 		}
+// 	}
+//
+// 	tr {
+// 		float: left;
+//
+// 		th,
+// 		td {
+// 			display: block !important;
+// 			border: $site-table-border-width solid $site-table-border-color;
+// 		}
+// 	}
+// }

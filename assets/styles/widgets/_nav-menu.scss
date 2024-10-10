@@ -1,0 +1,37 @@
+// /**
+//  * 0.0 - Widget Nav Menu
+//  *
+//  * Widget nav menu.
+//  */
+
+.widget_nav_menu {
+	.menu {
+		// @extend .#{$site-prefix}c-nav;
+		@include list-unstyled();
+		@extend .#{$site-prefix}u-clearfix;
+	}
+}
+
+// .widget_nav_menu {
+// 	div.menu-(nav-name)-container {
+// 		ul {
+// 			&#menu-(nav-name) {}
+// 			&.menu {}
+// 			li {
+// 				&.menu-item {}
+// 				&.menu-item-(id) {}
+// 				&.menu-item-type-custom{}
+// 				&.menu-item-object-custom {}
+// 				&.current-menu-item {}
+// 				&.current_page_item {}
+// 				&.menu-item-type-post_type {}
+// 				&.menu-item-type-taxonomy {}
+// 				&.menu-item-object-page {}
+// 				&.menu-item-home{}
+// 				&.menu-item-has-children {}
+// 				a {}
+// 				ul.sub-menu {}
+// 			}
+// 		}
+// 	}
+// }

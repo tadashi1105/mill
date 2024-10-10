@@ -1,0 +1,68 @@
+// Pagitabonation
+
+.pagination {
+	@extend .#{$site-prefix}u-clearfix;
+	@include rem(margin-bottom, map-get(map-get($site-spacers, 1), y));
+	@include media-breakpoint-up(md) {
+		@include rem(margin-bottom, map-get(map-get($site-spacers, 3), y));
+	}
+
+	.nav-links {
+		width: 100%;
+		display: inline-block;
+		text-align: center;
+		position: relative;
+	}
+
+	.page-numbers {
+		position: relative;
+		display: inline-block;
+		@include rem(padding, $site-pagination-padding-y $site-pagination-padding-x);
+		line-height: $site-line-height;
+	}
+
+	.page-numbers:not(.dots) {
+		color: $site-pagination-link-color;
+		text-decoration: none;
+		border-bottom: 3px solid transparent;
+
+		@include hover-focus {
+			color: $site-pagination-link-hover-color;
+			border-bottom-color: $site-pagination-link-hover-color;
+		}
+	}
+
+	.page-numbers:not(.prev):not(.next):not(.current) {
+		display: none;
+
+		@include media-breakpoint-up(md) {
+			display: inline-block;
+		}
+	}
+
+	.dots {}
+
+	.page-numbers.current {
+		@include plain-hover-focus {
+			cursor: default;
+		}
+
+		@include media-breakpoint-up(md) {
+			@include plain-hover-focus {
+				border-bottom-color: $site-pagination-link-active-color;
+			}
+		}
+	}
+
+	.prev {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.next {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}

@@ -1,0 +1,197 @@
+// /**
+//  * 0.0 - Nav
+//  *
+//  * Nav.
+//  */
+
+.#{$site-prefix}c-nav {
+	$this: &;
+
+	@include list-unstyled();
+	margin-bottom: 0;
+
+	.menu-item > a,
+	&__link {
+		display: inline-block;
+
+		@include hover-focus {
+			text-decoration: none;
+		}
+
+		// Disabled state lightens text and removes hover/tab effects
+		&.disabled {
+			color: $site-nav-disabled-link-color;
+
+			@include plain-hover-focus {
+				color: $site-nav-disabled-link-hover-color;
+				cursor: $site-cursor-disabled;
+				background-color: transparent;
+			}
+		}
+	}
+
+
+	// Nav inline
+
+	&--inline {
+		.menu-item,
+		#{$this}__item {
+			display: inline-block;
+		}
+
+		.menu-item + .menu-item,
+		.menu-item > a + .menu-item > a,
+		#{$this}__item + #{$this}__item,
+		#{$this}__link + #{$this}__link {
+			margin-left: $site-nav-inline-margin-x;
+		}
+	}
+
+
+	// Nav tabs
+
+	&--tabs {
+		display: table;
+
+		.menu-item,
+		#{$this}__item {
+			display: table-cell;
+		}
+
+		.menu-item > a,
+		#{$this}__link {
+			display: block;
+			@include rem(padding, $site-nav-tabs-link-padding);
+			border-bottom: $site-nav-tabs-link-border-bottom-width solid $site-nav-tabs-link-border-color;
+			// height: $site-nav-tabs-link-height;
+			line-height: $site-nav-tabs-link-line-height;
+			@include rem(font-size, $site-nav-tabs-link-font-size);
+			font-weight: $site-nav-tabs-link-font-weight;
+
+			@include hover-focus {
+				border-bottom-color: $site-nav-tabs-link-hover-border-color;
+			}
+		}
+
+		.current-menu-item > a,
+		#{$this}__link.active {
+			// border-bottom-color: $site-nav-tabs-active-link-border-color;
+			@include plain-hover-focus {
+				border-bottom-color: $site-nav-tabs-active-link-hover-border-color;
+			}
+		}
+
+		&#{$this}--justified {
+			width: 100%;
+			table-layout: fixed;
+			text-align: center;
+		}
+
+		// &#{$this}--dark {
+		// 	.menu-item,
+		// 	.menu-item > a,
+		// 	#{$this}__item,
+		// 	#{$this}__link {
+		// 		// border-bottom-color: $site-nav-dark-link-border-color;
+		// 		@include hover-focus {
+		// 			border-bottom-color: $site-nav-dark-link-hover-border-color;
+		// 		}
+		// 	}
+    //
+		// 	.current-menu-item > a,
+		// 	.active > #{$this}__link,
+		// 	#{$this}__link.active {
+		// 		// border-bottom-color: $site-nav-dark-active-link-border-color;
+		// 		@include plain-hover-focus {
+		// 			border-bottom-color: $site-nav-dark-active-link-hover-border-color;
+		// 		}
+		// 	}
+		// }
+
+		// &#{$this}--light {
+		// 	.menu-item,
+		// 	.menu-item > a,
+		// 	#{$this}__item,
+		// 	#{$this}__link {
+		// 		// border-bottom-color: $site-nav-light-link-border-color;
+		// 		@include hover-focus {
+		// 			border-bottom-color: $site-nav-light-link-hover-border-color;
+		// 		}
+		// 	}
+    //
+		// 	.current-menu-item > a,
+		// 	.active > #{$this}__link,
+		// 	#{$this}__link.active {
+		// 		// border-bottom-color: $site-nav-light-active-link-border-color;
+		// 		@include plain-hover-focus {
+		// 			border-bottom-color: $site-nav-light-active-link-hover-border-color;
+		// 		}
+		// 	}
+		// }
+	}
+
+	// &--dark {
+	// 	color: $site-nav-dark-color;
+  //
+	// 	.menu-item,
+	// 	.menu-item > a,
+	// 	#{$this}__item,
+	// 	#{$this}__link {
+	// 		color: $site-nav-dark-link-color;
+	// 		@include hover-focus {
+	// 			color: $site-nav-dark-link-hover-color;
+	// 		}
+	// 	}
+  //
+	// 	.current-menu-item > a,
+	// 	.active > #{$this}__link,
+	// 	#{$this}__link.active {
+	// 		// color: $site-nav-dark-active-link-color;
+	// 		@include plain-hover-focus {
+	// 			color: $site-nav-dark-active-link-hover-color;
+	// 		}
+	// 	}
+	// }
+
+	// &--light {
+	// 	color: $site-nav-light-color;
+  //
+	// 	.menu-item,
+	// 	.menu-item > a,
+	// 	#{$this}__item,
+	// 	#{$this}__link {
+	// 		color: $site-nav-light-link-color;
+	// 		@include hover-focus {
+	// 			color: $site-nav-light-link-hover-color;
+	// 		}
+	// 	}
+  //
+	// 	.current-menu-item > a,
+	// 	.active > #{$this}__link,
+	// 	#{$this}__link.active {
+	// 		// color: $site-nav-light-active-link-color;
+	// 		@include plain-hover-focus {
+	// 			color: $site-nav-light-active-link-hover-color;
+	// 		}
+	// 	}
+	// }
+}
+
+
+//
+// Tabbable tabs
+//
+
+// Hide tabbable panes to start, show them when `.active`
+// .#{$site-prefix}c-tabs {
+// }
+
+.#{$site-prefix}c-tabs__content {
+	> .#{$site-prefix}c-tabs__tab-pane {
+		display: none;
+	}
+
+	> .active {
+		display: block;
+	}
+}

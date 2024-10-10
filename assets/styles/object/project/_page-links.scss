@@ -1,0 +1,37 @@
+// Page links
+
+.#{$site-prefix}p-page-links {
+	$this: &;
+
+	&__title {
+		position: relative;
+		display: inline-block;
+		padding: $site-page-links-padding-y $site-page-links-padding-x;
+		line-height: $site-page-links-line-height;
+		background-color: $site-page-links-bg-color;
+	}
+
+	&__number {
+		@extend #{$this}__title;
+		color: $site-page-links-color;
+		background-color: $site-page-links-active-bg-color;
+	}
+
+	a #{$this}__number {
+		color: $site-page-links-link-color;
+		background-color: $site-page-links-link-bg-color;
+		@include hover-focus {
+			color: $site-page-links-link-hover-color;
+			background-color: $site-page-links-link-hover-bg-color;
+		}
+	}
+}
+
+// .page-links {
+// 	&__title {}
+// 	&__number {}
+// 	a #{$this}__number {
+// 		@include hover-focus {
+// 		}
+// 	}
+// }

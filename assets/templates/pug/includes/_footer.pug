@@ -1,0 +1,63 @@
+footer.mill-footer(
+  id='footer',
+  class=[
+    'site-info',
+    'site-footer',
+  ],
+  role='contentinfo'
+)
+  .mill-footer__navbar.mill-navbar(
+    id='colophon',
+    class=[
+      'mill-layout--margin-bottom-0',
+      'navbar',
+      'navbar-default',
+    ]
+  )
+    .mill-container-fluid(
+      class='container-fluid',
+    )
+      .mill-navbar__header(
+        class=[
+          'navbar-header',
+        ]
+      )
+        span.mill-navbar__brand(
+          class=[
+            'navbar-brand',
+          ],
+        ) More Information
+
+      nav.mill-navbar__collapse(
+        id='footer-navigation',
+        class=[
+          'in',
+          'collapse',
+          'navbar-collapse',
+          'footer-navigation',
+        ],
+        role='navigation'
+      )
+        ul.mill-navbar__nav.mill-nav(
+          class=[
+            'nav',
+            'navbar-nav',
+          ],
+        )
+          li.mill-nav__item(
+            class='active'
+          )
+            a.mill-nav__link(href='#') 特定商取引に基づく表記
+              span.sr-only (current)
+          li.mill-nav__item
+            a.mill-nav__link(href='#') プライバシーポリシー
+          li.mill-nav__item
+            a.mill-nav__link(href='#') お問い合わせ
+        p(
+          class=[
+            'navbar-text',
+            'navbar-right',
+          ]
+        )
+          | © 2013-2015 #[a(href="#" class='navbar-link' rel='home')= title]
+// .mill-footer 

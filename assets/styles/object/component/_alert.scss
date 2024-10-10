@@ -1,0 +1,65 @@
+//
+// Base styles
+//
+
+.#{$site-prefix}c-alert {
+	@include rem(padding, $site-alert-padding);
+	@include rem(margin-bottom, $site-spacer-y);
+	border: $site-alert-border-width solid transparent;
+	@include border-radius($site-alert-border-radius);
+
+	// Improve alignment and spacing of inner content
+	> p,
+	> ul {
+		margin-bottom: 0;
+	}
+	> p + p {
+		margin-top: 5px;
+	}
+}
+
+// Headings for larger alerts
+.#{$site-prefix}c-alert__heading {
+	// Specified to prevent conflicts of changing $headings-color
+	color: inherit;
+}
+
+// Provide class for links that match alerts
+.#{$site-prefix}c-alert__link {
+	font-weight: $site-alert-link-font-weight;
+}
+
+
+// Dismissible alerts
+//
+// Expand the right padding and account for the close button's positioning.
+
+.#{$site-prefix}c-alert--dismissible {
+	padding-right: ($site-alert-padding + 20);
+
+	// Adjust close link position
+	.close {
+		position: relative;
+		top: -2px;
+		right: -21px;
+		color: inherit;
+	}
+}
+
+
+// Alternate styles
+//
+// Generate contextual modifier classes for colorizing the alert.
+
+.#{$site-prefix}c-alert--success {
+	@include alert-variant($site-alert-success-bg, $site-alert-success-border, $site-alert-success-text);
+}
+.#{$site-prefix}c-alert--info {
+	@include alert-variant($site-alert-info-bg, $site-alert-info-border, $site-alert-info-text);
+}
+.#{$site-prefix}c-alert--warning {
+	@include alert-variant($site-alert-warning-bg, $site-alert-warning-border, $site-alert-warning-text);
+}
+.#{$site-prefix}c-alert--danger {
+	@include alert-variant($site-alert-danger-bg, $site-alert-danger-border, $site-alert-danger-text);
+}

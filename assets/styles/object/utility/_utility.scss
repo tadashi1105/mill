@@ -1,0 +1,120 @@
+//
+// Floats
+//
+
+.#{$site-prefix}u-clearfix {
+	@include clearfix();
+}
+
+.#{$site-prefix}u-center-block {
+	@include center-block();
+}
+
+@each $breakpoint in map-keys($site-grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		.#{$site-prefix}u-pull-#{$breakpoint}-left {
+			@include pull-left();
+		}
+		.#{$site-prefix}u-pull-#{$breakpoint}-right {
+			@include pull-right();
+		}
+		.#{$site-prefix}u-pull-#{$breakpoint}-none {
+			float: none !important;
+		}
+	}
+}
+
+
+//
+// Screenreaders
+//
+
+.#{$site-prefix}u-sr-only {
+	@include sr-only();
+}
+
+.#{$site-prefix}u-sr-only-focusable {
+	@include sr-only-focusable();
+}
+
+// .#{$site-prefix}u-invisible {
+// 	visibility: hidden !important;
+// }
+//
+// .#{$site-prefix}u-text-hide {
+// 	@include text-hide();
+// }
+
+
+//
+// Text
+//
+
+// Alignment
+
+// .#{$site-prefix}u-text-justify        { text-align: justify !important; }
+.#{$site-prefix}u-text-nowrap         { white-space: nowrap !important; }
+.#{$site-prefix}u-text-truncate       { @include text-truncate; }
+
+// Responsive alignment
+
+@each $breakpoint in map-keys($site-grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		.#{$site-prefix}u-text-#{$breakpoint}-left   { text-align: left !important; }
+		.#{$site-prefix}u-text-#{$breakpoint}-right  { text-align: right !important; }
+		.#{$site-prefix}u-text-#{$breakpoint}-center { text-align: center !important; }
+	}
+}
+
+// Transformation
+
+// .#{$site-prefix}u-text-lowercase      { text-transform: lowercase !important; }
+// .#{$site-prefix}u-text-uppercase      { text-transform: uppercase !important; }
+// .#{$site-prefix}u-text-capitalize     { text-transform: capitalize !important; }
+
+// Weight and italics
+
+// .#{$site-prefix}u-font-weight-normal  { font-weight: normal; }
+// .#{$site-prefix}u-font-weight-bold    { font-weight: bold; }
+// .#{$site-prefix}u-font-italic         { font-style: italic; }
+
+
+@each $breakpoint in map-keys($site-grid-breakpoints) {
+	// @include media-breakpoint-up($breakpoint) {
+	// 	.#{$site-prefix}u-br-#{$breakpoint}-up::after {
+	// 		content: "\A" ;
+	// 		white-space: pre ;
+	// 	}
+	// }
+  //
+	// @include media-breakpoint-down($breakpoint) {
+	// 	.#{$site-prefix}u-br-#{$breakpoint}-down::after {
+	// 		content: "\A" ;
+	// 		white-space: pre ;
+	// 	}
+	// }
+}
+
+%scrollable {
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	-webkit-overflow-scrolling: touch;
+	display: block;
+	width: 100%;
+	min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.#{$site-prefix}u-scrollable-x {
+	@extend %scrollable;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+// .#{$site-prefix}u-scrollable-y {
+// 	@extend %scrollable;
+// 	overflow-x: hidden;
+// 	overflow-y: auto;
+// }

@@ -1,0 +1,44 @@
+extends ./layouts/_default.pug
+
+//- block head
+//- append style
+
+block body
+  //- overwrite variables
+  - page = 'single'
+  //- END overwrite variables
+  a(
+    href='#content',
+    class=[
+      'sr-only',
+      'sr-only-focusable',
+      'screen-reader-text',
+      'skip-link',
+    ]
+  ) Skip to content
+  .mill(
+    id='page',
+    class=[
+      'mill-color--body',
+      'mill-color-text--body',
+      'hfeed',
+      'site',
+    ]
+  )
+    include ./includes/_header.pug
+    include ./includes/_drawer.pug
+
+    .mill-content(
+      id='content'
+      class=[
+        'site-content',
+      ]
+    )
+      +content
+        include ./includes/_main.pug
+        include ./includes/_sidebar.pug
+      include ./includes/_footer.pug
+    // .mill-content 
+  // .mill 
+
+//- append script

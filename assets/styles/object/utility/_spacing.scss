@@ -1,0 +1,50 @@
+// Margin and Padding
+
+// .#{$site-prefix}u-m-x-auto {
+// 	margin-right: auto !important;
+// 	margin-left:  auto !important;
+// }
+
+@each $prop, $abbrev in (margin: m, padding: p) {
+	@each $size, $lengths in $site-spacers {
+		$length-x:   map-get($lengths, x);
+		$length-y:   map-get($lengths, y);
+
+		.#{$site-prefix}u-#{$abbrev}-a-#{$size} {
+			@include rem(#{$prop}, $length-y $length-x !important);
+		} // a = All sides
+
+		.#{$site-prefix}u-#{$abbrev}-t-#{$size} {
+			@include rem(#{$prop}-top, $length-y !important);
+		}
+
+		// .#{$site-prefix}u-#{$abbrev}-r-#{$size} {
+		// 	@include rem(#{$prop}-right, $length-x !important);
+		// }
+
+		.#{$site-prefix}u-#{$abbrev}-b-#{$size} {
+			@include rem(#{$prop}-bottom, $length-y !important);
+		}
+
+		// .#{$site-prefix}u-#{$abbrev}-l-#{$size} {
+		// 	@include rem(#{$prop}-left, $length-x !important);
+		// }
+
+		// Axes
+		.#{$site-prefix}u-#{$abbrev}-x-#{$size} {
+			@include rem(#{$prop}-right, $length-x !important);
+			@include rem(#{$prop}-left, $length-x !important);
+		}
+		.#{$site-prefix}u-#{$abbrev}-y-#{$size} {
+			@include rem(#{$prop}-top, $length-y !important);
+			@include rem(#{$prop}-bottom, $length-y !important);
+		}
+	}
+}
+
+
+// Width and Height
+
+.#{$site-prefix}u-w-100per {
+	width: 100%;
+}

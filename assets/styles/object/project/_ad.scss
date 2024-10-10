@@ -1,0 +1,40 @@
+// Ad
+
+.#{$site-prefix}p-ad {
+	&__item {
+		background: $site-gray-lighter;
+		@include rem(margin, 1rem .5rem);
+	}
+
+	&__item--main-before-content,
+	&__item--main-after-content {
+		margin: 0;
+	}
+
+	// &__item--nsd {
+	// }
+
+	@include media-breakpoint-up(md) {
+		&__item {
+			margin: 0;
+		}
+
+		&__item--main-top,
+		&__item--main-bottom {
+			@include rem(margin-bottom, 1rem);
+		}
+
+		// &__item--main-bottom {
+		// }
+	}
+}
+
+.tag-pr {
+	.site-p-entry-card__meta,
+	.site-p-entry-list__meta {
+		&::after {
+			float: right;
+			content: 'PR';
+		}
+	}
+}

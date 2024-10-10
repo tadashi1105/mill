@@ -1,0 +1,55 @@
+// Navs
+
+$site-nav-disabled-link-color:                   $site-gray-light !default;
+$site-nav-disabled-link-hover-color:             $site-gray-light !default;
+
+
+// Modifier - Inline
+
+$site-nav-inline-margin-x: 0 !default;
+
+
+// Modifier - Tabs
+
+$site-nav-tabs-link-padding:                     16px 16px 13px !default;
+// $site-nav-tabs-link-height:                     48px !default;
+$site-nav-tabs-link-line-height: 1 !default;
+$site-nav-tabs-link-font-size: $site-font-size-sm !default;
+
+$site-nav-tabs-link-font-weight: 500 !default;
+
+$site-nav-tabs-link-border-bottom-width:         3px !default;
+
+$site-nav-tabs-link-border-color:                transparent !default;
+$site-nav-tabs-link-hover-border-color:          $site-gray-lighter !default;
+
+// $site-nav-tabs-active-link-border-color:         $site-gray !default;
+$site-nav-tabs-active-link-hover-border-color:   $site-brand-primary !default;
+
+
+// Modifier - Dark
+
+$site-nav-dark-color:                     $site-dark-contrast-color !default;
+$site-nav-dark-link-color:                $site-dark-contrast-color !default;
+$site-nav-dark-link-hover-color:          $site-dark-contrast-hover-color !default;
+// $site-nav-dark-link-border-color:         transparent !default;
+$site-nav-dark-link-hover-border-color:   $site-dark-contrast-hover-color !default;
+
+// $site-nav-dark-active-link-color:        $site-dark-contrast-active-color !default;
+$site-nav-dark-active-link-hover-color:     $site-dark-contrast-active-color !default;
+// $site-nav-dark-active-link-border-color: $site-dark-contrast-active-color !default;
+$site-nav-dark-active-link-hover-border-color: $site-dark-contrast-active-color !default;
+
+
+// Modifier - Tabs - Light
+
+$site-nav-light-color:                     $site-light-contrast-color !default;
+$site-nav-light-link-color:                $site-light-contrast-color !default;
+$site-nav-light-link-hover-color:          $site-light-contrast-hover-color !default;
+// $site-nav-light-link-border-color:         transparent !default;
+$site-nav-light-link-hover-border-color:   $site-light-contrast-hover-color !default;
+
+// $site-nav-light-active-link-color:        $site-light-contrast-active-color !default;
+$site-nav-light-active-link-hover-color:     $site-light-contrast-active-color !default;
+// $site-nav-light-active-link-border-color: $site-light-contrast-active-color !default;
+$site-nav-light-active-link-hover-border-color: $site-light-contrast-active-color !default;

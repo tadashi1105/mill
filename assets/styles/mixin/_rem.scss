@@ -1,0 +1,48 @@
+// Rem
+
+@mixin rem($property, $values, $root: $site-font-size-root) {
+	$px: ();
+	$rem: ();
+	$important: false;
+
+	@each $value in $values {
+		@if $value == 0 or $value == auto {
+			$px : append($px , $value);
+			$rem: append($rem, $value);
+		} @else if $value == "!important" {
+			$important: $value;
+		} @else {
+			$unit: unit($value);
+			$val: $value / ($value * 0 + 1);
+			$root: $root / ($root * 0 + 1);
+
+			@if $unit == "px" {
+				$px : append($px,  $value);
+				$rem: append($rem, ($val / $root + rem));
+			}
+
+			@if $unit == "rem" {
+				$px : append($px,  ($val * $root + px));
+				$rem: append($rem, $value);
+			}
+		}
+	}
+
+	@if $important == "!important" {
+		$px : append($px,  $important);
+		$rem: append($rem, $important);
+	}
+
+	@if $site-enable-rem {
+		@if $px == $rem {
+			#{$property}: $px;
+		} @else if $site-enable-ie {
+			#{$property}: $px;
+			#{$property}: $rem;
+		} @else {
+			#{$property}: $rem;
+		}
+	} @else {
+		#{$property}: $px;
+	}
+}

@@ -1,0 +1,35 @@
+.mill-col.col-sm-12.col-md-4
+  .mill-side(
+    id='secondary',
+    class=[
+      'secondary',
+    ]
+    role='complementary',
+  )
+    .mill-side__header
+      +card--sub
+        nav(
+          id='social-navigation',
+          class=[
+            'mill-social-navigation',
+            'social-navigation',
+          ],
+          role='navigation',
+        )
+          ul: li: a(href='#'): span.screen-reader-text twitter
+
+    .mill-side__section
+      .mill-side__widget-section(
+        id='widget-area',
+        class=[
+          'widget-area',
+        ],
+      )
+        .mill-row.row
+          - for (var x = 0; x < 3; x++)
+            .mill-col.col-sm-6.col-md-12
+              +widget
+
+    .mill-side__footer
+      +card--sub
+      +card-t

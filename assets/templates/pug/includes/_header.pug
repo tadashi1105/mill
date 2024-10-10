@@ -1,0 +1,207 @@
+header.mill-header(
+  id='header',
+  class=[
+    'site-header',
+  ],
+  role='banner'
+)
+  .mill-header__navbar.mill-navbar(
+    id='masthead',
+    class=[
+      'mill-layout--margin-bottom-24',
+      'mill-shadow--4dp',
+      'navbar',
+      'navbar-default',
+    ]
+  )
+    .mill-container-fluid(
+      class='container-fluid',
+    )
+      .mill-navbar__header(
+        class=[
+          'navbar-header',
+        ]
+      )
+        button.mill-navbar__toggle(
+          type='button',
+          class=[
+            'navbar-toggle',
+            'collapsed',
+          ],
+          data-toggle='collapse',
+          data-target='#site-navigation',
+          aria-expanded='false',
+        )
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.mill-navbar__brand(
+          href='#',
+          class=[
+            'navbar-brand',
+            'site-branding',
+          ],
+          rel="home",
+        )
+          h1.mill-navbar__title(
+            href='#', 
+            class='site-title',
+          )= title
+
+      nav.mill-navbar__collapse(
+        id='site-navigation',
+        class=[
+          'collapse',
+          'navbar-collapse',
+          'main-navigation',
+        ],
+        role='navigation'
+      )
+        form.mill-navbar__form.mill-form(
+          class=[
+            'navbar-form',
+            'navbar-right',
+          ],
+          role='search',
+          method='get',
+          action='#',
+        )
+          .mill-form__group.form-group
+            span.sr-only.screen-reader-text Search for
+            input.mill-form__control(
+              type='search',
+              class=[
+                'form-control',
+                'search-field',
+              ],
+              placeholder='Search &hellip',
+              value='',
+              name='s',
+              title='Search for:',
+            )
+          input.mill-btn(
+            type='submit',
+            class=[
+              'btn',
+              'btn-default',
+              'visible-md-inline-block',
+              'visible-lg-inline-block',
+              'search-submit',
+            ],
+            value='Search',
+          )
+
+        ul.mill-navbar__nav.mill-nav(
+          class=[
+            'nav',
+            'navbar-nav',
+            'navbar-right',
+          ],
+        )
+          li.mill-nav__item(
+            class='active'
+          )
+            a.mill-nav__link(href='#') サイトマップ
+              span.sr-only (current)
+          li.mill-nav__item
+            a.mill-nav__link(href='#') メールマガジン
+          li.mill-nav__item
+            a.mill-nav__link(href='#') お問い合わせ
+          li.mill-nav__item(
+            class=[
+              'visible-xs-block',
+            ],
+          )
+            a.mill-nav__link(href='#') 仕事術
+          li.mill-nav__item(
+            class=[
+              'visible-xs-block',
+            ],
+          )
+            a.mill-nav__link(href='#') ライフハック
+          li.mill-nav__item(
+            class=[
+              'visible-xs-block',
+            ],
+          )
+            a.mill-nav__link(href='#') Web戦略
+          li.mill-nav__item(
+            class=[
+              'visible-xs-block',
+            ],
+          )
+            a.mill-nav__link(href='#') WordPress
+          li.mill-nav__item.mill-dropdown(
+            class=[
+              'dropdown',
+            ]
+          )
+            a.mill-dropdown__toggle(
+              href='#',
+              class='dropdown-toggle',
+              role='button',
+              data-toggle='dropdown',
+              aria-haspopup='true',
+              aria-expanded='false',
+            ) More
+              span.caret
+            ul.mill-dropdown__menu(
+              class='dropdown-menu'
+            )
+              li.mill-dropdown__item
+                a.mill-dropdown__link(href='#') Dropdown 1
+              li.mill-dropdown__item
+                a.mill-dropdown__link(href='#') Dropdown 2
+              li.mill-dropdown__separator(
+                class='divider',
+                role='separator',
+              )
+              li.mill-dropdown__item
+                a.mill-dropdown__link(href='#') Dropdown 3
+              li.mill-dropdown__separator(
+                class='divider',
+                role='separator',
+              )
+              li.mill-dropdown__item
+                a.mill-dropdown__link(href='#') Dropdown 4
+
+  // .mill-header__navbar 
+
+  nav.mill-header__nav(
+    class=[
+      'mill-layout--margin-bottom-24',
+      'visible-sm-block',
+      'visible-md-block',
+      'visible-lg-block',
+    ]
+  )
+    .mill-container-fluid(
+      class=[
+        'mill-container--max-width-desktop',
+        'container-fluid',
+      ],
+    )
+      ul.mill-nav(
+        class=[
+          'mill-nav--tabs',
+          'mill-nav--justified',
+          'nav',
+          'nav-tabs',
+          'nav-justified',
+        ]
+      )
+        li.mill-nav__item(
+          class='active',
+        )
+          a.mill-nav__link(href='#') Home
+        li.mill-nav__item
+          a.mill-nav__link(href='#') 仕事術
+        li.mill-nav__item
+          a.mill-nav__link(href='#') ライフハック
+        li.mill-nav__item
+          a.mill-nav__link(href='#') Web戦略
+        li.mill-nav__item
+          a.mill-nav__link(href='#') WordPress
+  // .mill-header__nav 
+// .mill-header 

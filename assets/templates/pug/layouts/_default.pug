@@ -1,0 +1,26 @@
+include ../_variables.pug
+include ../_mixins.pug
+doctype html
+<!--[if lt IE 7]>
+html(class='ie ie6' lang='ja')/
+<![endif]-->
+<!--[if IE 7]>
+html(class='ie ie7' lang='ja')/
+<![endif]-->
+<!--[if IE 8]>
+html(class='ie ie8' lang='ja')/
+<![endif]-->
+<!--[if !(IE 7)|!(IE 8)]><!-->
+html(lang='ja')
+  <!--<![endif]-->
+  head
+    block head
+      include ../includes/_head.pug
+
+    block style
+      include ../includes/_styles.pug
+
+  body(class=bodyClass)
+    block body
+    block script
+      include ../includes/_scripts.pug
